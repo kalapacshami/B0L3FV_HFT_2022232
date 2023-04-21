@@ -18,8 +18,9 @@ namespace B0L3FV_HFT_2022232.Models
         public int Level { get; set; }
         public int Money { get; set; }
         public float Height { get; set; }
-
+        [NotMapped]
         public virtual ICollection<Mission> Missions { get; set; }
+        [NotMapped]
         public virtual Work Work { get; set; }
         public Goblin()
         {
