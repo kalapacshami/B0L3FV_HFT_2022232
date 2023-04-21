@@ -26,7 +26,7 @@ namespace B0L3FV_HFT_2022232.Models
         public int Kills { get; set; }
         public int Loot { get; set; }
         public int Deaths { get; set; }
-
+        [NotMapped]
         public virtual Goblin Goblin { get; set; }
         public Mission()
         {
