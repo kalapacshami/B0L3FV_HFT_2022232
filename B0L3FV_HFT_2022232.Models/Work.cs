@@ -20,6 +20,7 @@ namespace B0L3FV_HFT_2022232.Models
         [Range(0, 5)]
         public int HazardLevel { get; set; }
         public int LocID { get; set; }
+        [NotMapped]
         public virtual ICollection<Goblin> Goblins { get; set; }
         public Work()
         {
