@@ -17,7 +17,7 @@ namespace B0L3FV_HFT_2022232.Repository
 
         public GoblinDbContext()
         {
-            Database.EnsureCreated();
+            this.Database.EnsureCreated();
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder Builder)
@@ -57,6 +57,12 @@ namespace B0L3FV_HFT_2022232.Repository
 
            });
 
+            //GoblinID = int.Parse(split[0]);
+            //WID = int.Parse(split[1]);
+            //GoblinName = split[2];
+            //Level = int.Parse(split[3]);
+            //Money = int.Parse(split[4]);
+            //Height = float.Parse(split[5]);
             modelBuilder.Entity<Goblin>().HasData(new Goblin[]
             {
 
@@ -84,6 +90,12 @@ namespace B0L3FV_HFT_2022232.Repository
                 new Goblin("22*2*Wretchbelly*6*4570*186"),
                 new Goblin("23*6*Squicktooth*2*7500*170"),
                 new Goblin("24*4*Rattleclank*16*3230*136"),
+                new Goblin("25*6*Krambrek*20*61000*42"),
+                new Goblin("26*1*Barryl*24*40000*11"),
+                new Goblin("27*2*Brumgran*15*32000*6"),
+                new Goblin("28*5*Hurtharn*25*44000*60"),
+                new Goblin("29*4*Gralmor*25*60000*46"),
+                new Goblin("30*7*Grilduhr*25*56000*37")
 
 
             });

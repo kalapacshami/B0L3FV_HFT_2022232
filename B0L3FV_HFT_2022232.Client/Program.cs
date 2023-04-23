@@ -1,4 +1,6 @@
-﻿using System;
+﻿using B0L3FV_HFT_2022232.Repository;
+using System;
+using System.Linq;
 
 namespace B0L3FV_HFT_2022232.Client
 {
@@ -7,6 +9,11 @@ namespace B0L3FV_HFT_2022232.Client
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            GoblinDbContext ctx = new GoblinDbContext();
+
+            var items = ctx.Goblins.ToArray();
+            
         }
     }
 }
