@@ -15,7 +15,7 @@ namespace B0L3FV_HFT_2022232.Repository
 
         public override Mission Read(int id)
         {
-            throw new NotImplementedException();
+            return ctx.Missions.FirstOrDefault(t => t.MissionID == id);
         }
 
         public override void Update(Mission item)
