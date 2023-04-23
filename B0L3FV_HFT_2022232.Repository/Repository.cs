@@ -27,19 +27,15 @@ namespace B0L3FV_HFT_2022232.Repository
             ctx.SaveChanges();
         }
 
-        public T Read(int id)
-        {
-            
-        }
+        public abstract T Read(int id);
+        
 
         public IQueryable<T> ReadAll()
         {
             
         }
 
-        public void Update(T item)
-        {
-            
-        }
+        public abstract void Update(T item);
+        
     }
 }
