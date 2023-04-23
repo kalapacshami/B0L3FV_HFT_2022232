@@ -17,11 +17,14 @@ namespace B0L3FV_HFT_2022232.Repository
         }
         public void Create(T item)
         {
-            throw new NotImplementedException();
+            ctx.Set<T>().Add(item);
+            ctx.SaveChanges();
         }
 
         public void Delete(int id)
         {
+            ctx.Set<T>().Remove(Read(id));
+            ctx.SaveChanges();
         }
 
         public T Read(int id)
