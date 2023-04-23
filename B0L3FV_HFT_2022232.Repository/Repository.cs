@@ -32,7 +32,7 @@ namespace B0L3FV_HFT_2022232.Repository
 
         public IQueryable<T> ReadAll()
         {
-            
+            return ctx.Set<T>();
         }
 
         public abstract void Update(T item);
