@@ -20,7 +20,15 @@ namespace B0L3FV_HFT_2022232.Repository
 
         public override void Update(Mission item)
         {
-            throw new NotImplementedException();
+            var old = Read(item.MissionID);
+            foreach (var property in old.GetType().GetProperties())
+            {
+                if (property.GetAccessors().FirstOrDefault(t=>t.IsVirtual)==null)
+                {
+                    property.SetValue(old, property.GetValue(item));
+                }
+            }
+            ctx.SaveChanges(); 
         }
     }
 }
