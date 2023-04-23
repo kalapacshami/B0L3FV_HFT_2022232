@@ -5,6 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="GoblinContext.mdf" />
+    <None Remove="GoblinContext_log.ldf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="GoblinContext.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GoblinContext_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\B0L3FV_HFT_2022232.Models\B0L3FV_HFT_2022232.Models.csproj" />
   </ItemGroup>
 	<ItemGroup>
