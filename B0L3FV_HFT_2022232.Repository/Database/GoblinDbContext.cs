@@ -24,8 +24,8 @@ namespace B0L3FV_HFT_2022232.Repository
         {
             if (!Builder.IsConfigured)
             {
-                string conn = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\GoblinContext.mdf;Integrated Security=True;MultipleActiveResultSets=True";
-                Builder.UseLazyLoadingProxies().UseSqlServer(conn);
+                
+                Builder.UseLazyLoadingProxies().UseInMemoryDatabase("goblin");
             }
 
         }
