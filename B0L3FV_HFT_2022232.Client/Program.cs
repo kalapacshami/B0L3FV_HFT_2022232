@@ -10,9 +10,7 @@ namespace B0L3FV_HFT_2022232.Client
         {
             Console.WriteLine("Hello World!");
 
-            GoblinDbContext ctx = new GoblinDbContext();
-
-            var items = ctx.Goblins.ToArray();
+            
             
         }
     }
