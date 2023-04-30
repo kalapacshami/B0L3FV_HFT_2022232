@@ -7,29 +7,40 @@ namespace B0L3FV_HFT_2022232.Logic
 {
     public class GoblinLogic 
     {
+        IRepository<Goblin> repo;
+
+        public GoblinLogic(IRepository<Goblin> repo)
+        {
+            this.repo = repo;
+        }
+
         public void Create(Goblin item)
         {
-            throw new NotImplementedException();
+            if (item.GoblinName.Count() <4 )
+            {
+                throw new ArgumentException("The name is too short");
+            }
+            repo.Create(item);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            repo.Delete(id);
         }
 
         public Goblin Read(int id)
         {
-            throw new NotImplementedException();
+            return repo.Read(id);
         }
 
         public IQueryable<Goblin> ReadAll()
         {
-            throw new NotImplementedException();
+            return repo.ReadAll();
         }
 
         public void Update(Goblin item)
         {
-            throw new NotImplementedException();
+            repo.Update(item);
         }
     }
 }
