@@ -13,7 +13,7 @@ namespace B0L3FV_HFT_2022232.Logic
         void Delete(int id);
 
         Mission Read(int id);
-        IQueryable<Mission> GetAll();
+        IQueryable<Mission> ReadAll();
         void Update(Mission item);
         
     }
