@@ -17,7 +17,7 @@ namespace B0L3FV_HFT_2022232.Repository
 
         public GoblinDbContext()
         {
-            this.Database.EnsureCreated();
+            Database.EnsureCreated();
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder Builder)
