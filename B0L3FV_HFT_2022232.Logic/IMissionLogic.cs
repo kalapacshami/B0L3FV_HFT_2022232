@@ -10,5 +10,11 @@ namespace B0L3FV_HFT_2022232.Logic
     public interface IMissionLogic
     {
         void Create(Mission item);
+        void Delete(int id);
+
+        Mission Read(int id);
+        IQueryable<Mission> GetAll();
+        void Update(Mission item);
+        
     }
 }
