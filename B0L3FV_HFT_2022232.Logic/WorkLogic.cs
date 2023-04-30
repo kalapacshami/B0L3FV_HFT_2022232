@@ -10,29 +10,39 @@ namespace B0L3FV_HFT_2022232.Logic
 {
     internal class WorkLogic 
     {
+        IRepository<Work> repo;
+
+        public WorkLogic(IRepository<Work> repo)
+        {
+            this.repo = repo;  
+        }
         public void Create(Work item)
         {
-            throw new NotImplementedException();
+            if (item.WName.Count() < 4)
+            {
+                throw new ArgumentException("The name of the work is too short");
+            }
+            repo.Create(item);
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            repo.Delete(id);
         }
 
         public Work Read(int id)
         {
-            throw new NotImplementedException();
+            return repo.Read(id);
         }
 
         public IQueryable<Work> ReadAll()
         {
-            throw new NotImplementedException();
+            return repo.ReadAll();
         }
 
         public void Update(Work item)
         {
-            throw new NotImplementedException();
+            repo.Update(item);
         }
     }
 }
