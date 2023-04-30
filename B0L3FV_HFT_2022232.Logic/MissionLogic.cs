@@ -31,6 +31,10 @@ namespace B0L3FV_HFT_2022232.Logic
             {
                 throw new ArgumentException("Too long for the location");
             }
+            else if (item.Hazard >=6)
+            {
+                throw new ArgumentException("Hazard status can only be between 0 or 5");
+            }
             else
             {
                 repo.Create(item);
