@@ -159,15 +159,34 @@ namespace B0L3FV_HFT_2022232.Logic
                 return HashCode.Combine(Name,Type,Id);
             }
         }
-        public class Tool3 
+        public class Tool3
         {
+            public string Name { get; set; }
+            public double Income { get; set; }
+            public double Height { get; set; }
+            public double Hazard { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                Tool3 other = obj as Tool3;
+                if (other == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return Name == other.Name && Income == other.Income && Height == other.Height
+                        && Hazard==other.Hazard;
+                }
+            }
             public override int GetHashCode()
             {
-                return HashCode.Combine(Name, Type, Id);
+                return HashCode.Combine(Name,Income,Height,Hazard);
             }
         }
         public class Tool4 
         {
+
             public override int GetHashCode()
             {
                 return HashCode.Combine(Name, Type, Id);
