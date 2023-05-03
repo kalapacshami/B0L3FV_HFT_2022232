@@ -10,5 +10,10 @@ namespace B0L3FV_HFT_2022232.Logic
     public interface IWorkLogic
     {
         void Create(Work item);
+        void Delete(int id);
+        
+        Goblin Read(int id);
+        IQueryable<Work> ReadAll();
+        void Update(Work item);
     }
 }
