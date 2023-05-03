@@ -3,10 +3,11 @@ using B0L3FV_HFT_2022232.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace B0L3FV_HFT_2022232.Logic
 {
-    internal class MissionLogic
+    public class MissionLogic : IMissionLogic
     {
         IRepository<Mission> repo;
 
@@ -58,26 +59,53 @@ namespace B0L3FV_HFT_2022232.Logic
             return repo.ReadAll();
         }
 
+        
         public void Update(Mission item)
         {
             repo.Update(item);
         }
+        //--------------------------------------------------------------------------------------------------------------------------------------------------
 
-        public IEnumerable<Tool1> AVGMis() 
+        public IEnumerable<Tool1> AVGMission() 
         {
             return (from x in repo.ReadAll().ToList()
-                   group x by x.MType into g
-                   select new Tool1 
-                   {
-                    type=g.Key,
-                    avg_loot=g.Average(t=>t.Loot),
-                    avg_level=g.Average(t=>t.Goblin.Level),
-                    avg_Height=g.Average(t=>t.Goblin.Height),
-                    avg_Hazard=g.Average(t=>t.Hazard)
-                   }).AsEnumerable<Tool1>();
+                     group x by x.MType into g
+                     select new Tool1
+                     {
+                         type = g.Key,
+                         avg_loot = g.Average(t => t.Loot),
+                         avg_level = g.Average(t => t.Goblin.Level),
+                         avg_Height = g.Average(t => t.Goblin.Height),
+                         avg_Hazard = g.Average(t => t.Hazard)
+                     }).AsEnumerable<Tool1>();
+        }
+        public IEnumerable<Tool2> Missions() 
+        {
+            var mis = from x in repo.ReadAll()
+                      select new Tool2 {
+                      Name=x.Goblin.Work.WName,
+                      Type=x.MType,
+                      Id=x.MissionID
+                      };
+            return mis;
         
         }
+        public IEnumerable<Tool3> AVGWork()
+        {
 
+        }
+        public IEnumerable<Tool4> AVGGoblin()
+        {
+
+        }
+        public IEnumerable<Tool5> KillCountMissions()
+        {
+
+        }
+
+
+
+        // for the avg mission non-crud method
         public class Tool1 
         {
             public string type { get; set; }
@@ -105,12 +133,52 @@ namespace B0L3FV_HFT_2022232.Logic
                 return HashCode.Combine(type,avg_loot,avg_level,avg_Height,avg_Hazard);
             }
 
+        }
+        //FOR THE MISSION METHOD
+        public class Tool2 
+        {
+            public string Name { get; set; }
+            public string Type { get; set; }
 
+            public int Id { get; set; }
 
-
-
-
-
+            public override bool Equals(object obj)
+            {
+                Tool2 other = obj as Tool2;
+                if (other==null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return Name == other.Name && Type == other.Type && Id == other.Id;
+                }
+            }
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(Name,Type,Id);
+            }
+        }
+        public class Tool3 
+        {
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(Name, Type, Id);
+            }
+        }
+        public class Tool4 
+        {
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(Name, Type, Id);
+            }
+        }
+        public class Tool5 
+        {
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(Name, Type, Id);
+            }
         }
 
 
