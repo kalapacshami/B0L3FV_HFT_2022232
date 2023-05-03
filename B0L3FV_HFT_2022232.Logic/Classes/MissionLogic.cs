@@ -65,7 +65,16 @@ namespace B0L3FV_HFT_2022232.Logic
 
         public IEnumerable<Tool1> AVGMis() 
         {
-        
+            return (from x in repo.ReadAll().ToList()
+                   group x by x.MType into g
+                   select new Tool1 
+                   {
+                    type=g.Key,
+                    avg_loot=g.Average(t=>t.Loot),
+                    avg_level=g.Average(t=>t.Goblin.Level),
+                    avg_Height=g.Average(t=>t.Goblin.Height),
+                    avg_Hazard=g.Average(t=>t.Hazard)
+                   }).AsEnumerable<Tool1>();
         
         }
 
@@ -86,8 +95,14 @@ namespace B0L3FV_HFT_2022232.Logic
                 }
                 else
                 {
-                    return type==other
+                    return type==other.type && avg_loot==other.avg_loot&&avg_level==other.avg_level
+                        && avg_Height==other.avg_Height && avg_Hazard==other.avg_Hazard;
                 }
+            }
+
+            public override int GetHashCode()
+            {
+                return HashCode.Combine(type,avg_loot,avg_level,avg_Height,avg_Hazard);
             }
 
 
