@@ -120,6 +120,14 @@ namespace B0L3FV_HFT_2022232.Logic
         public IEnumerable<Tool5> KillCountMissions()
         {
             return from x in repo.ReadAll()
+                   where x.Kills > 100
+                   select new Tool5 {
+                   Id=x.MissionID,
+                   Type=x.MType,
+                   Name=x.Goblin.GoblinName,
+                   Kill=x.Kills,
+                   Goblin_work=x.Goblin.Work.WName
+                   };
                    
         }
 
@@ -271,7 +279,7 @@ namespace B0L3FV_HFT_2022232.Logic
             public string Type { get; set; }
             public string Name { get; set; }
             public int Kill { get; set; }
-            public int Goblin_WID { get; set; }
+            public string Goblin_work { get; set; }
 
             public override bool Equals(object obj)
             {
@@ -283,12 +291,12 @@ namespace B0L3FV_HFT_2022232.Logic
                 else
                 {
                     return Name==other.Name && Type==other.Type && 
-                        Id==other.Id && Kill==other.Kill && Goblin_WID == other.Goblin_WID;
+                        Id==other.Id && Kill==other.Kill && Goblin_work == other.Goblin_work;
                 }
             }
             public override int GetHashCode()
             {
-                return HashCode.Combine(Id, Type, Name,Kill,Goblin_WID);
+                return HashCode.Combine(Id, Type, Name,Kill,Goblin_work);
             }
         }
 
