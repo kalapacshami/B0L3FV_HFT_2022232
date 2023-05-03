@@ -2,6 +2,7 @@
 using B0L3FV_HFT_2022232.Repository;
 using System;
 using System.Linq;
+using B0L3FV_HFT_2022232.Logic;
 
 namespace B0L3FV_HFT_2022232.Client
 {
@@ -9,12 +10,12 @@ namespace B0L3FV_HFT_2022232.Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var ctx = new GoblinDbContext();
+            var repo = new GoblinRepository(ctx);
+            var logic = new GoblinLogic(repo);
 
-            IRepository<Goblin> repo = new GoblinRepository(new GoblinDbContext());
-
-            var items = repo.ReadAll().ToArray();
-            
+            var items = logic.ReadAll();
+            ;
         }
     }
 }
