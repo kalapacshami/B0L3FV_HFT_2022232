@@ -1,6 +1,7 @@
 ﻿using B0L3FV_HFT_2022232.Models;
 using B0L3FV_HFT_2022232.Repository;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace B0L3FV_HFT_2022232.Logic
@@ -61,5 +62,16 @@ namespace B0L3FV_HFT_2022232.Logic
         {
             repo.Update(item);
         }
+
+        public IEnumerable<> Mission() 
+        {
+        
+        
+        }
+
+
+
+
+
     }
 }
