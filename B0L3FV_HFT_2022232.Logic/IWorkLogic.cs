@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace B0L3FV_HFT_2022232.Logic
 {
-    internal interface IWorkLogic
+    public interface IWorkLogic
     {
+
     }
 }
