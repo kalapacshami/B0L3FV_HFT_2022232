@@ -13,6 +13,12 @@ namespace B0L3FV_HFT_2022232.Client
         {
             try
             {
+                if (ent =="Goblin")
+                {
+                    Console.WriteLine("Goblin Name: ");
+                    string Name =Console.ReadLine();
+                    
+                }
 
             }
             catch (Exception ex)
