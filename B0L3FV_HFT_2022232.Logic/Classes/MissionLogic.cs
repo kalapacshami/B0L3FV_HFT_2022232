@@ -105,7 +105,16 @@ namespace B0L3FV_HFT_2022232.Logic
         }
         public IEnumerable<Tool4> AVGGoblin()
         {
-
+            return from x in repo.ReadAll()
+                    group x by x.Goblin.GoblinName into g
+                    select new Tool4
+                    {
+                        Name = g.Key,
+                        Loot=g.Average(t=>t.Loot),
+                        Kill= g.Average(t => t.Kills),
+                        Death = g.Average(t => t.Deaths),
+                        Duration=g.Average(t => t.MissionDuration)
+                    };
         }
         public IEnumerable<Tool5> KillCountMissions()
         {
@@ -143,6 +152,13 @@ namespace B0L3FV_HFT_2022232.Logic
             }
 
         }
+
+
+
+
+
+
+
         //FOR THE MISSION METHOD
         public class Tool2 
         {
@@ -168,6 +184,13 @@ namespace B0L3FV_HFT_2022232.Logic
                 return HashCode.Combine(Name,Type,Id);
             }
         }
+
+
+
+
+
+
+
         // it's for the avg in work method
         public class Tool3
         {
@@ -194,20 +217,59 @@ namespace B0L3FV_HFT_2022232.Logic
                 return HashCode.Combine(Name,Income,Height,Hazard);
             }
         }
+
+
+
+
+
+
+
+
+
         // for the goblin non-crud method
         public class Tool4 
         {
             public string Name { get; set; }
             public double Loot { get; set; }
             public double Kill { get; set; }
-            public double 
+            public double Death { get; set; }
+            public double Duration { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                Tool4 other = obj as Tool4;
+                if (other == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return Name == other.Name && Loot == other.Loot && Kill == other.Kill
+                        && Death == other.Death
+                        && Duration==other.Duration;
+                }
+            }
             public override int GetHashCode()
             {
-                return HashCode.Combine(Name, Loot, Kill);
+                return HashCode.Combine(Name, Loot, Kill,Death,Duration);
             }
         }
+
+
+
+
+
+
+
+
+
         public class Tool5 
         {
+            public int Id { get; set; }
+            public string Type { get; set; }
+            public string Name { get; set; }
+            public int Kill { get; set; }
+            public int Death { get; set; }
             public override int GetHashCode()
             {
                 return HashCode.Combine(Name, Type, Id);
