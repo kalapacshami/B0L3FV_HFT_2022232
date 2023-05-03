@@ -92,7 +92,16 @@ namespace B0L3FV_HFT_2022232.Logic
         }
         public IEnumerable<Tool3> AVGWork()
         {
-
+            return (from x in repo.ReadAll().ToList()
+                    group x by x.Goblin.Work.WID into g
+                    select new Tool3
+                    {
+                        Name=g.Select(t=>t.Goblin.Work.WName).First(),
+                        Income = g.Average(t=>t.Goblin.Money),
+                        Height=g.Average(t=>t.Goblin.Height),
+                        Hazard=g.Average(t=>t.Hazard)
+                        
+                    }).AsEnumerable<Tool3>();
         }
         public IEnumerable<Tool4> AVGGoblin()
         {
@@ -159,6 +168,7 @@ namespace B0L3FV_HFT_2022232.Logic
                 return HashCode.Combine(Name,Type,Id);
             }
         }
+        // it's for the avg in work method
         public class Tool3
         {
             public string Name { get; set; }
