@@ -194,12 +194,16 @@ namespace B0L3FV_HFT_2022232.Logic
                 return HashCode.Combine(Name,Income,Height,Hazard);
             }
         }
+        // for the goblin non-crud method
         public class Tool4 
         {
-
+            public string Name { get; set; }
+            public double Loot { get; set; }
+            public double Kill { get; set; }
+            public double 
             public override int GetHashCode()
             {
-                return HashCode.Combine(Name, Type, Id);
+                return HashCode.Combine(Name, Loot, Kill);
             }
         }
         public class Tool5 
