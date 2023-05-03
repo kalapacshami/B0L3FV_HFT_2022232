@@ -63,12 +63,40 @@ namespace B0L3FV_HFT_2022232.Logic
             repo.Update(item);
         }
 
-        public IEnumerable<> Mission() 
+        public IEnumerable<Tool1> AVGMis() 
         {
         
         
         }
 
+        public class Tool1 
+        {
+            public string type { get; set; }
+            public double avg_loot { get; set; }
+            public double avg_level { get; set;}
+            public double avg_Height { get; set; }
+            public double avg_Hazard { get; set;}
+
+            public override bool Equals(object obj)
+            {
+                Tool1 other = obj as Tool1;
+                if (other == null) 
+                {
+                    return false; 
+                }
+                else
+                {
+                    return type==other
+                }
+            }
+
+
+
+
+
+
+
+        }
 
 
 

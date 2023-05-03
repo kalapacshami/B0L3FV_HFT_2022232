@@ -16,5 +16,6 @@ namespace B0L3FV_HFT_2022232.Logic
         IQueryable<Mission> ReadAll();
         void Update(Mission item);
         
+        public IEnumerable
     }
 }
