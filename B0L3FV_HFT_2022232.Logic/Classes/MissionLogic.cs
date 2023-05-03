@@ -2,6 +2,7 @@
 using B0L3FV_HFT_2022232.Repository;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -261,7 +262,7 @@ namespace B0L3FV_HFT_2022232.Logic
 
 
 
-
+        // For the killin type of method
 
         public class Tool5 
         {
@@ -269,10 +270,24 @@ namespace B0L3FV_HFT_2022232.Logic
             public string Type { get; set; }
             public string Name { get; set; }
             public int Kill { get; set; }
-            public int Death { get; set; }
+            public int Goblin_WID { get; set; }
+
+            public override bool Equals(object obj)
+            {
+                Tool5 other = obj as Tool5;
+                if (other == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return Name==other.Name && Type==other.Type && 
+                        Id==other.Id && Kill==other.Kill && Goblin_WID == other.Goblin_WID;
+                }
+            }
             public override int GetHashCode()
             {
-                return HashCode.Combine(Name, Type, Id);
+                return HashCode.Combine(Id, Type, Name,Kill,Goblin_WID);
             }
         }
 
