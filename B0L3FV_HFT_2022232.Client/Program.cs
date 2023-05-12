@@ -28,16 +28,16 @@ namespace B0L3FV_HFT_2022232.Client
         }
         static void List(string ent)
         {
-            if (ent == "Goblin")
-            {
-                var items = goblinlog.ReadAll();
-                Console.WriteLine("Id" + "\t" + "Name");
-                foreach (var item in items)
-                {
-                    Console.WriteLine(item.GoblinID + "\t" + item.GoblinName);
-                }
-            }
-            Console.ReadLine();
+            //if (ent == "Goblin")
+            //{
+            //    var items = goblinlog.ReadAll();
+            //    Console.WriteLine("Id" + "\t" + "Name");
+            //    foreach (var item in items)
+            //    {
+            //        Console.WriteLine(item.GoblinID + "\t" + item.GoblinName);
+            //    }
+            //}
+            //Console.ReadLine();
         }
 
 
