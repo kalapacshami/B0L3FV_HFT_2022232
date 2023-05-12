@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace B0L3FV_HFT_2022232.Logic
 {
-    public class WorkLogic 
+    public class WorkLogic : IWorkLogic
     {
         IRepository<Work> repo;
 
@@ -44,5 +44,7 @@ namespace B0L3FV_HFT_2022232.Logic
         {
             repo.Update(item);
         }
+
+        
     }
 }

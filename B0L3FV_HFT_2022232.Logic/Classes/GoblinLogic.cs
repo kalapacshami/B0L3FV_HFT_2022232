@@ -5,7 +5,7 @@ using B0L3FV_HFT_2022232.Repository;
 
 namespace B0L3FV_HFT_2022232.Logic
 {
-    public class GoblinLogic 
+    public class GoblinLogic : IGoblinLogic
     {
         IRepository<Goblin> repo;
 
@@ -35,8 +35,10 @@ namespace B0L3FV_HFT_2022232.Logic
 
         public IQueryable<Goblin> ReadAll()
         {
-            return repo.ReadAll();
+            return repo.ReadAll();            
+            
         }
+        
 
         public void Update(Goblin item)
         {

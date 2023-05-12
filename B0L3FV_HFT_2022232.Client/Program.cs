@@ -10,6 +10,9 @@ namespace B0L3FV_HFT_2022232.Client
 {
     internal class Program
     {
+        static GoblinLogic goblinlog;
+        static MissionLogic missionlog;
+        static WorkLogic worklog;
 
         static void Create(string ent) 
         {
@@ -22,12 +25,21 @@ namespace B0L3FV_HFT_2022232.Client
             Console.WriteLine(ent + " update");
             Console.ReadLine();
         }
-
-        static void List(string ent) 
+        static void List(string ent)
         {
-            Console.WriteLine(ent + " list");
-            Console.ReadLine();
+            if (ent == "Work")
+            {
+                var items = worklog.ReadAll();
+                Console.WriteLine("Id"+"\t"+"Name");
+                foreach (var item in items)
+                {
+                    Console.WriteLine(item.WID+"\t"+item.WName);
+                }
+            }
+            Console.ReadLine() ;
         }
+
+
 
         static void Delete(string ent) 
         {
@@ -43,49 +55,53 @@ namespace B0L3FV_HFT_2022232.Client
         {
 
             var ctx = new GoblinDbContext();
+            var goblins = ctx.Goblins.ToArray();
+            
 
             var Gobrepo = new GoblinRepository(ctx);
             var Misrepo = new MissionRepository(ctx);
-            var Workrepo= new WorkRepository(ctx);
+            var Workrepo = new WorkRepository(ctx);
+            
+            var allmission =missionlog.ReadAll();
+            ;
+            
 
-            var goblinlog = new GoblinLogic(Gobrepo);
-            var Missionlogic = new MissionLogic(Misrepo);
-            var Wlogig = new WorkLogic(Workrepo);
 
-            var goblinsubmenu = new ConsoleMenu(args, level: 1)
-                .Add("List", () => List("Goblin"))
-                .Add("Create", () => Create("Goblin"))
-                .Add("Delete", () => Delete("Goblin"))
-                .Add("Update", () => Update("Goblin"))
-                .Add("Exit", ConsoleMenu.Close);
+            //var goblinsubmenu = new ConsoleMenu(args, level: 1)
+            //    .Add("List", () => List("Goblin"))
+            //    .Add("Create", () => Create("Goblin"))
+            //    .Add("Delete", () => Delete("Goblin"))
+            //    .Add("Update", () => Update("Goblin"))
+            //    .Add("Exit", ConsoleMenu.Close);
 
-            var Worksubmenu = new ConsoleMenu(args, level: 1)
-               .Add("List", () => List("Work"))
-               .Add("Create", () => Create("Work"))
-               .Add("Delete", () => Delete("Work"))
-               .Add("Update", () => Update("Work"))
-               .Add("Exit", ConsoleMenu.Close);
+            //var Worksubmenu = new ConsoleMenu(args, level: 1)
+            //   .Add("List", () => List("Work"))
+            //   .Add("Create", () => Create("Work"))
+            //   .Add("Delete", () => Delete("Work"))
+            //   .Add("Update", () => Update("Work"))
+            //   .Add("Exit", ConsoleMenu.Close);
 
-            var Missionsubmenu = new ConsoleMenu(args, level: 1)
-               .Add("List", () => List("Mission"))
-               .Add("Create", () => Create("Mission"))
-               .Add("Delete", () => Delete("Mission"))
-               .Add("Update", () => Update("Mission"))
-               .Add("Exit", ConsoleMenu.Close);
+            //var Missionsubmenu = new ConsoleMenu(args, level: 1)
+            //   .Add("List", () => List("Mission"))
+            //   .Add("Create", () => Create("Mission"))
+            //   .Add("Delete", () => Delete("Mission"))
+            //   .Add("Update", () => Update("Mission"))
+            //   .Add("Exit", ConsoleMenu.Close);
 
-            var menu = new ConsoleMenu(args, level:0)
-                .Add("Goblins", () =>goblinsubmenu.Show())
-                .Add("Works", () => Worksubmenu.Show())
-                .Add("Missions", () =>Missionsubmenu.Show())
-                
-                .Add("Exit", ConsoleMenu.Close);
+            //var menu = new ConsoleMenu(args, level: 0)
+            //    .Add("Goblins", () => goblinsubmenu.Show())
+            //    .Add("Works", () => Worksubmenu.Show())
+            //    .Add("Missions", () => Missionsubmenu.Show())
 
-            menu.Show();
+            //    .Add("Exit", ConsoleMenu.Close);
+
+            //menu.Show();
 
 
         }
 
         
+
 
         static void Missions() 
         {
