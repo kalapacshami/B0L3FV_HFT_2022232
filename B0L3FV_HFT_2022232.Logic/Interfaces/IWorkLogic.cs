@@ -1,4 +1,6 @@
 ﻿using B0L3FV_HFT_2022232.Models;
+using B0L3FV_HFT_2022232.Repository;
+using static B0L3FV_HFT_2022232.Logic.WorkLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;

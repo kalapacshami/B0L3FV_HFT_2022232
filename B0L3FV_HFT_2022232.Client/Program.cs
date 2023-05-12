@@ -10,9 +10,7 @@ namespace B0L3FV_HFT_2022232.Client
 {
     internal class Program
     {
-        static GoblinLogic goblinlog;
-        static MissionLogic missionlog;
-        static WorkLogic worklog;
+        
 
         static void Create(string ent) 
         {
@@ -25,19 +23,19 @@ namespace B0L3FV_HFT_2022232.Client
             Console.WriteLine(ent + " update");
             Console.ReadLine();
         }
-        static void List(string ent)
-        {
-            if (ent == "Work")
-            {
-                var items = worklog.ReadAll();
-                Console.WriteLine("Id"+"\t"+"Name");
-                foreach (var item in items)
-                {
-                    Console.WriteLine(item.WID+"\t"+item.WName);
-                }
-            }
-            Console.ReadLine() ;
-        }
+        //static void List(string ent)
+        //{
+        //    if (ent == "Work")
+        //    {
+        //        var items = worklog.ReadAll();
+        //        Console.WriteLine("Id"+"\t"+"Name");
+        //        foreach (var item in items)
+        //        {
+        //            Console.WriteLine(item.WID+"\t"+item.WName);
+        //        }
+        //    }
+        //    Console.ReadLine() ;
+        //}
 
 
 
@@ -55,14 +53,25 @@ namespace B0L3FV_HFT_2022232.Client
         {
 
             var ctx = new GoblinDbContext();
-            var goblins = ctx.Goblins.ToArray();
-            
+            //var goblins = ctx.Goblins.ToArray();
 
+            
             var Gobrepo = new GoblinRepository(ctx);
             var Misrepo = new MissionRepository(ctx);
             var Workrepo = new WorkRepository(ctx);
-            
-            var allmission =missionlog.ReadAll();
+
+            GoblinLogic goblinlog = new GoblinLogic(Gobrepo);
+            WorkLogic worklog = new WorkLogic(Workrepo);
+            MissionLogic missionlog = new MissionLogic(Misrepo);
+
+            Goblin demo = new Goblin() 
+            {
+                GoblinID = 50,
+                GoblinName="A"
+            };
+            goblinlog.Create(demo);
+
+            var goblins = goblinlog.ReadAll();
             ;
             
 
