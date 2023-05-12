@@ -64,15 +64,7 @@ namespace B0L3FV_HFT_2022232.Client
             WorkLogic worklog = new WorkLogic(Workrepo);
             MissionLogic missionlog = new MissionLogic(Misrepo);
 
-            Goblin demo = new Goblin() 
-            {
-                GoblinID = 50,
-                GoblinName="A"
-            };
-            goblinlog.Create(demo);
-
-            var goblins = goblinlog.ReadAll();
-            ;
+            
             
 
 
