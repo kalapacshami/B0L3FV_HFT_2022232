@@ -1,8 +1,8 @@
 ﻿using B0L3FV_HFT_2022232.Models;
-using B0L3FV_HFT_2022232.Repository;
+
 using System;
 using System.Linq;
-using B0L3FV_HFT_2022232.Logic;
+
 using ConsoleTools;
 using System.Collections.Generic;
 
@@ -10,9 +10,9 @@ namespace B0L3FV_HFT_2022232.Client
 {
     internal class Program
     {
-        static GoblinLogic goblinlog;
-        static WorkLogic worklog;
-        static MissionLogic missionlog;
+        //static GoblinLogic goblinlog;
+        //static WorkLogic worklog;
+        //static MissionLogic missionlog;
 
 
         static void Create(string ent) 
@@ -55,13 +55,13 @@ namespace B0L3FV_HFT_2022232.Client
         static void Main(string[] args)
         {
 
-            var ctx = new GoblinDbContext();
-            //var goblins = ctx.Goblins.ToArray();
+            //var ctx = new GoblinDbContext();
+            ////var goblins = ctx.Goblins.ToArray();
 
             
-            var Gobrepo = new GoblinRepository(ctx);
-            var Misrepo = new MissionRepository(ctx);
-            var Workrepo = new WorkRepository(ctx);
+            //var Gobrepo = new GoblinRepository(ctx);
+            //var Misrepo = new MissionRepository(ctx);
+            //var Workrepo = new WorkRepository(ctx);
 
             
 
