@@ -3,6 +3,8 @@ using B0L3FV_HFT_2022232.Repository;
 using System;
 using System.Linq;
 using B0L3FV_HFT_2022232.Logic;
+using ConsoleTools;
+using System.Collections.Generic;
 
 namespace B0L3FV_HFT_2022232.Client
 {
@@ -11,61 +13,26 @@ namespace B0L3FV_HFT_2022232.Client
 
         static void Create(string ent) 
         {
-            try
-            {
-                if (ent =="Goblin")
-                {
-                    Console.WriteLine("Goblin Name: ");
-                    string Name =Console.ReadLine();
-                    
-                }
+            Console.WriteLine(ent+" create");
+            Console.ReadLine();
 
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.Message);
-            }
-        
-        
         }
         static void Update(string ent) 
         {
-            try
-            {
-
-            }
-            catch (Exception ex) 
-            {
-
-                Console.WriteLine(ex.Message);
-            }
+            Console.WriteLine(ent + " update");
+            Console.ReadLine();
         }
 
         static void List(string ent) 
         {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.Message);
-            }
+            Console.WriteLine(ent + " list");
+            Console.ReadLine();
         }
 
         static void Delete(string ent) 
         {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.Message);
-            }
+            Console.WriteLine(ent + " delete");
+            Console.ReadLine();
         }
 
 
@@ -75,16 +42,69 @@ namespace B0L3FV_HFT_2022232.Client
         static void Main(string[] args)
         {
 
+            var ctx = new GoblinDbContext();
+
+            var Gobrepo = new GoblinRepository(ctx);
+            var Misrepo = new MissionRepository(ctx);
+            var Workrepo= new WorkRepository(ctx);
+
+            var goblinlog = new GoblinLogic(Gobrepo);
+            var Missionlogic = new MissionLogic(Misrepo);
+            var Wlogig = new WorkLogic(Workrepo);
+
+            var goblinsubmenu = new ConsoleMenu(args, level: 1)
+                .Add("List", () => List("Goblin"))
+                .Add("Create", () => Create("Goblin"))
+                .Add("Delete", () => Delete("Goblin"))
+                .Add("Update", () => Update("Goblin"))
+                .Add("Exit", ConsoleMenu.Close);
+
+            var Worksubmenu = new ConsoleMenu(args, level: 1)
+               .Add("List", () => List("Work"))
+               .Add("Create", () => Create("Work"))
+               .Add("Delete", () => Delete("Work"))
+               .Add("Update", () => Update("Work"))
+               .Add("Exit", ConsoleMenu.Close);
+
+            var Missionsubmenu = new ConsoleMenu(args, level: 1)
+               .Add("List", () => List("Mission"))
+               .Add("Create", () => Create("Mission"))
+               .Add("Delete", () => Delete("Mission"))
+               .Add("Update", () => Update("Mission"))
+               .Add("Exit", ConsoleMenu.Close);
+
+            var menu = new ConsoleMenu(args, level:0)
+                .Add("Goblins", () =>goblinsubmenu.Show())
+                .Add("Works", () => Worksubmenu.Show())
+                .Add("Missions", () =>Missionsubmenu.Show())
+                
+                .Add("Exit", ConsoleMenu.Close);
+
+            menu.Show();
 
 
+        }
 
+        
 
+        static void Missions() 
+        {
+        
+        }
 
+        static void AVGWork() 
+        {
+        
+        }
 
+        static void AVGGoblin() 
+        {
+        
+        }
 
-
-            
-
+        static void KillCountMissions() 
+        {
+        
         }
 
         public class Tool1
