@@ -3,53 +3,52 @@ using B0L3FV_HFT_2022232.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
+
+
 namespace B0L3FV_HFT_2022232.Endpoint.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GoblinController : ControllerBase
+    public class WorkController : ControllerBase
     {
 
-        IGoblinLogic logic;
+        IWorkLogic logic;
 
-        public GoblinController(IGoblinLogic logic)
+        public WorkController(IWorkLogic logic)
         {
             this.logic = logic;
         }
 
 
-
-
-
-
+        // GET: api/<WorkController>
         [HttpGet]
-        public IEnumerable<Goblin> ReadAll()
+        public IEnumerable<Work> ReadAll()
         {
             return this.logic.ReadAll();
         }
 
-        // GET api/<GoblinController>/5
+        // GET api/<WorkController>/5
         [HttpGet("{id}")]
-        public Goblin Read(int id)
+        public Work Read(int id)
         {
             return this.logic.Read(id);
         }
 
-        // POST api/<GoblinController>
+        // POST api/<WorkController>
         [HttpPost]
-        public void Create([FromBody] Goblin value)
+        public void Post([FromBody] Work value)
         {
             this.logic.Create(value);
         }
 
-        // PUT api/<GoblinController>/5
+        // PUT api/<WorkController>/5
         [HttpPut]
-        public void Update(int id, [FromBody] Goblin value)
+        public void Update( [FromBody] Work value)
         {
             this.logic.Update(value);
         }
 
-        // DELETE api/<GoblinController>/5
+        // DELETE api/<WorkController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

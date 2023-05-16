@@ -10,10 +10,8 @@ namespace B0L3FV_HFT_2022232.Client
 {
     internal class Program
     {
-        //static GoblinLogic goblinlog;
-        //static WorkLogic worklog;
-        //static MissionLogic missionlog;
 
+        static RestService rest;
 
         static void Create(string ent) 
         {
@@ -28,16 +26,11 @@ namespace B0L3FV_HFT_2022232.Client
         }
         static void List(string ent)
         {
-            //if (ent == "Goblin")
-            //{
-            //    var items = goblinlog.ReadAll();
-            //    Console.WriteLine("Id" + "\t" + "Name");
-            //    foreach (var item in items)
-            //    {
-            //        Console.WriteLine(item.GoblinID + "\t" + item.GoblinName);
-            //    }
-            //}
-            //Console.ReadLine();
+            if (ent == "Goblin")
+            {
+                
+            }
+            Console.ReadLine();
         }
 
 
@@ -55,17 +48,7 @@ namespace B0L3FV_HFT_2022232.Client
         static void Main(string[] args)
         {
 
-            //var ctx = new GoblinDbContext();
-            ////var goblins = ctx.Goblins.ToArray();
-
-            
-            //var Gobrepo = new GoblinRepository(ctx);
-            //var Misrepo = new MissionRepository(ctx);
-            //var Workrepo = new WorkRepository(ctx);
-
-            
-
-
+            rest = new RestService("http://localhost:11828/","Goblin");
 
 
 
