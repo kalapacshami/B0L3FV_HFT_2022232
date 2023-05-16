@@ -5,6 +5,7 @@ using System.Linq;
 
 using ConsoleTools;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 
 namespace B0L3FV_HFT_2022232.Client
 {
@@ -15,30 +16,161 @@ namespace B0L3FV_HFT_2022232.Client
 
         static void Create(string ent) 
         {
-            Console.WriteLine(ent+" create");
-            Console.ReadLine();
+            try
+            {
+                if (ent == "Goblin")
+                {
+                    Console.WriteLine("Enter goblin's name: ");
+                    string name = Console.ReadLine();
+                    rest.Post(new Goblin()
+                    {
+                        GoblinName = name
+                    }, "Goblin");
+                }
+                else if (ent == "Work") 
+                {
+                    Console.WriteLine("What should we call this work: ");
+                    string name = Console.ReadLine();
+                    rest.Post(new Work()
+                    {
+                        WName = name
+                    }, "Work");
+                }
+                else if (ent == "Mission")
+                {
+                    Console.WriteLine("What type of Mission is this: ");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Where is this Mission takes place (location): ");
+                    string name2 = Console.ReadLine();
+                    rest.Post(new Mission()
+                    {
+                        MType = name,
+                        Location = name2
+                    },"Mission") ;
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
 
         }
+
+
         static void Update(string ent) 
         {
-            Console.WriteLine(ent + " update");
-            Console.ReadLine();
+            try
+            {
+                if (ent == "Goblin")
+                {
+                    Console.Write("Give me the ID of the goblin, you want to update: ");
+                    int id = int.Parse(Console.ReadLine());
+                    Goblin gob = rest.Get<Goblin>(id, "Goblin");
+                    Console.Write($"new name, old name: {gob.GoblinName}");
+                    string name = Console.ReadLine();
+                    gob.GoblinName = name;
+                    rest.Put(gob, "Goblin");
+                }
+                else if (ent == "Work") 
+                {
+                    Console.Write("Give me the ID of the work, you want to update: ");
+                    int id = int.Parse(Console.ReadLine());
+                    Work gob = rest.Get<Work>(id, "Work");
+                    Console.Write($"new name, old name: {gob.WName}");
+                    string name = Console.ReadLine();
+                    gob.WName = name;
+                    rest.Put(gob, "Work");
+                }
+                else if (ent == "Mission")
+                {
+                    Console.Write("Give me the ID of the Mission, you want to update: ");
+                    int id = int.Parse(Console.ReadLine());
+                    Mission gob = rest.Get<Mission>(id, "Work");
+                    Console.Write($"new type, old type: {gob.MType}");
+                    string name = Console.ReadLine();
+                    Console.Write($"new location, old location: {gob.MType}");
+                    string name2 = Console.ReadLine();
+                    gob.MType = name;
+                    gob.Location = name2;
+                    rest.Put(gob, "Mission");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
         }
         static void List(string ent)
         {
-            if (ent == "Goblin")
+            try
             {
-                
+                if (ent == "Goblin")
+                {
+                    List<Goblin> goblin = rest.Get<Goblin>("Goblin");
+                    foreach (var item in goblin)
+                    {
+                        Console.WriteLine(item.GoblinID + " " + item.GoblinName);
+                    }
+
+                }
+                else if (ent == "Work") 
+                {
+                    List<Work> work = rest.Get<Work>("Work");
+                    foreach (var item in work)
+                    {
+                        Console.WriteLine(item.WID + " " + item.WName);
+                    }
+                }
+                else if (ent == "Mission")
+                {
+                    List<Mission> mission = rest.Get<Mission>("Mission");
+                    foreach (var item in mission)
+                    {
+                        Console.WriteLine(item.MissionID + " " + item.MType+" "+item.Location);
+                    }
+                }
+                Console.ReadLine();
             }
-            Console.ReadLine();
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
         }
 
 
 
         static void Delete(string ent) 
         {
-            Console.WriteLine(ent + " delete");
-            Console.ReadLine();
+            try
+            {
+                if (ent == "Goblin")
+                {
+                    Console.Write("Which Id goblin you want to delete: ");
+                    int id = int.Parse(Console.ReadLine());
+                    rest.Delete(id, "Goblin");
+                }
+                else if (ent == "Work")
+                {
+                    Console.Write("Which Id work you want to delete: ");
+                    int id = int.Parse(Console.ReadLine());
+                    rest.Delete(id, "Work");
+                }
+                else if (ent == "Mission") 
+                {
+                    Console.Write("Which Id mission you want to delete: ");
+                    int id = int.Parse(Console.ReadLine());
+                    rest.Delete(id, "Mission");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
         }
 
 
@@ -73,6 +205,14 @@ namespace B0L3FV_HFT_2022232.Client
                .Add("Update", () => Update("Mission"))
                .Add("Exit", ConsoleMenu.Close);
 
+            var ToolSubMenu = new ConsoleMenu(args, level: 1)
+                .Add("AVGMission", AVGMission)
+                .Add("Missions", Missions)
+                .Add("AVGWork", AVGWork)
+                .Add("AVGGoblin", AVGGoblin)
+                .Add("KillCountMissions", KillCountMissions)
+                .Add("Exit", ConsoleMenu.Close);
+
             var menu = new ConsoleMenu(args, level: 0)
                 .Add("Goblins", () => goblinsubmenu.Show())
                 .Add("Works", () => Worksubmenu.Show())
@@ -85,27 +225,106 @@ namespace B0L3FV_HFT_2022232.Client
 
         }
 
-        
 
+        static void AVGMission() 
+        {
+            try
+            {
+                IEnumerable<Tool1> result = rest.Get<Tool1>("/Tool/AVGMission");
+
+                foreach (var item in result)
+                {
+                    Console.WriteLine(item.type + ":AvgHazzard " + item.avg_Hazard + ":AvgBeardLength " + item.avg_Height + ":AvgLoot" + item.avg_loot + ":AvgLvl " + item.avg_level);
+                }
+                Console.ReadLine();
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+        }
 
         static void Missions() 
         {
-        
+
+            try
+            {
+                IEnumerable<Tool2> result = rest.Get<Tool2>("/Tool/Missions");
+
+                foreach (var item in result)
+                {
+                    Console.WriteLine(item.Id + ": " + item.Type + ": " + item.Name);
+                }
+                Console.ReadLine();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         static void AVGWork() 
         {
-        
+
+            try
+            {
+                IEnumerable<Tool3> result = rest.Get<Tool3>("/Tool/AVGWork");
+
+                foreach (var item in result)
+                {
+                    Console.WriteLine(item.Name + ":AvgIncome " + item.Income + ":AvgBeardLength " + item.Height + ":AvgHazzard " + item.Hazard);
+                }
+                Console.ReadLine();
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
         }
 
         static void AVGGoblin() 
         {
-        
+
+            try
+            {
+                IEnumerable<Tool4> result = rest.Get<Tool4>("/Tool/AVGGoblin");
+
+                foreach (var item in result)
+                {
+                    Console.WriteLine(item.Name + ":AvgMissionLength " + item.Duration + ":AvgKills " + item.Kill + ":AvgDowns " + item.Death + ":AvgLoot " + item.Loot);
+                }
+                Console.ReadLine();
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
         }
 
         static void KillCountMissions() 
         {
-        
+
+            try
+            {
+                IEnumerable<Tool5> result = rest.Get<Tool5>("/Tool/KillCountMissions");
+
+                foreach (var item in result)
+                {
+                    Console.WriteLine(item.Id + ": " + item.Type + ": " + item.Name + ": " + item.Goblin_work + ":Kills " + item.Kill);
+                }
+                Console.ReadLine();
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
         }
 
         public class Tool1
