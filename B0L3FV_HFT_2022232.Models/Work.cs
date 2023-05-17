@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace B0L3FV_HFT_2022232.Models
 {
@@ -21,6 +22,7 @@ namespace B0L3FV_HFT_2022232.Models
         public int HazardLevel { get; set; }
         public int LocID { get; set; }
         [NotMapped]
+        [JsonIgnore]
         public virtual ICollection<Goblin> Goblins { get; set; }
         public Work()
         {
