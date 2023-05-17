@@ -17,6 +17,7 @@ namespace B0L3FV_HFT_2022232.Test
     {
         MissionLogic logic;
         Mock<IRepository<Mission>> mockmission;
+
         [SetUp]
         public void Init() 
         {
@@ -29,31 +30,61 @@ namespace B0L3FV_HFT_2022232.Test
 
             Work work1= new Work("1*Prospector*1*1000*2500*3");
             Work work2= new Work("2*Miner*2*1500*2500*4");
-            ICollection<Mission> testmissio = new Collection<Mission>();
-            testmissio.Add(miss1);
-            testmissio.Add(miss2);
+
+            ICollection<Mission> testmissio = new Collection<Mission>
+            {
+                miss1,
+                miss2
+            };
+
             goblin1.Missions=testmissio;
             goblin2.Missions=testmissio;
-            ICollection<Goblin> testgoblin = new Collection<Goblin>();
-            testgoblin.Add(goblin1);
-            testgoblin.Add(goblin2);
+
+            ICollection<Goblin> testgoblin = new Collection<Goblin>
+            {
+                goblin1,
+                goblin2
+            };
+
+            miss1.Goblin = goblin1;
+            miss2.Goblin = goblin2;
+
             work1.Goblins=testgoblin;
             work2.Goblins = testgoblin;
+
             goblin1.Work = work1;
             goblin2.Work = work2;
-            List<Work> workes = new List<Work>();
-            workes.Add(work1);
-            workes.Add(work2);
-            mockmission=new Mock<IRepository<Mission>>();
+
+            List<Work> workes = new List<Work>
+            {
+                work1,
+                work2
+            };
+
+            mockmission =new Mock<IRepository<Mission>>();
 
             mockmission.Setup(t => t.ReadAll()).Returns(testmissio.AsQueryable());
+
             logic=new MissionLogic(mockmission.Object);
 
 
 
 
         }
-        //Mission miss1 = new Mission("1*2023.02.21 8:10*1*4*true*21*Mining*The Forest of Whispers*122*1*47000");
+        //string[] split = line.Split('*');
+        //MissionID = int.Parse(split[0]);
+        //Date = DateTime.Parse(split[1]);
+        //    GoblinID = int.Parse(split[2]);
+        //Hazard = int.Parse(split[3]);
+        //MissionCompleted = bool.Parse(split[4]);
+        //MissionDuration = int.Parse(split[5]);
+        //MType = split[6];
+        //    Location = split[7];
+        //    Kills = int.Parse(split[8]);
+        //Deaths = int.Parse(split[9]);
+        //Loot = int.Parse(split[10]);
+        //                             MissionId , Date,      GoblinId, Hazard, completed, duration mistype    location              Kills   Death  Loot  
+        //Mission miss1 = new Mission("1*     2023.02.21 8:10   *1*       4       *true*    21     *Mining*   The Forest of Whispers* 122*   1*      47000");
         //Mission miss2 = new Mission("2*2023.02.28 9:18*2*5*false*40*Hunt*The Crystal Spire*320*5*62000");
 
         //Goblin goblin1 = new Goblin("1*2*Grubsnarl*7*3000*112");
@@ -66,6 +97,7 @@ namespace B0L3FV_HFT_2022232.Test
         public void AVGMissiontest() 
         {
             var actual = logic.AVGMission().ToList();
+            
             var expected = new List<Tool1>()
             {
                 new Tool1()
@@ -88,6 +120,9 @@ namespace B0L3FV_HFT_2022232.Test
             
             Assert.AreEqual(expected, actual);
         }
+
+
+
         [Test]
         public void Missionstest() 
         {
@@ -173,6 +208,15 @@ namespace B0L3FV_HFT_2022232.Test
             Assert.AreEqual(actual, expected);
         }
 
+        //Mission miss1 = new Mission("1*2023.02.21 8:10*1*4*true*21*Mining*The Forest of Whispers*122*1*47000");
+        //Mission miss2 = new Mission("2*2023.02.28 9:18*2*5*false*40*Hunt*The Crystal Spire*320*5*62000");
+
+        //Goblin goblin1 = new Goblin("1*2*Grubsnarl*7*3000*112");
+        //Goblin goblin2 = new Goblin("2*3*Snikchop*14*1000*179");
+
+        //Work work1 = new Work("1*Prospector*1*1000*2500*3");
+        //Work work2 = new Work("2*Miner*2*1500*2500*4");
+
         [Test]
         public void KillCountMissionstest()
         {
@@ -186,7 +230,15 @@ namespace B0L3FV_HFT_2022232.Test
                     Kill = 320,
                     Id = 2,
                     Type = "Hunt",
-                }
+                },
+                //new Tool5() 
+                //{
+                //    Goblin_work="Miner",
+                //    Name="Snikchop",
+                //    Kill=122,
+                //    Id=1,
+                //    Type="Mining"
+                //}
             };
 
 
