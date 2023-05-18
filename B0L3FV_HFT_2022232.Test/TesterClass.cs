@@ -145,6 +145,19 @@ namespace B0L3FV_HFT_2022232.Test
 
             Assert.AreEqual(actual, expected);
         }
+        //Name=g.Select(t=>t.Goblin.Work.WName).First(),
+        //                Income = g.Average(t=>t.Goblin.Money),
+        //                Height=g.Average(t=>t.Goblin.Height),
+        //                Hazard=g.Average(t=>t.Hazard)
+
+        //Mission miss1 = new Mission("1*     2023.02.21 8:10   *1*       4       *true*    21     *Mining*   The Forest of Whispers* 122*   1*      47000");
+        //Mission miss2 = new Mission("2*2023.02.28 9:18*2*5*false*40*Hunt*The Crystal Spire*320*5*62000");
+
+        //Goblin goblin1 = new Goblin("1*2*Grubsnarl*7*3000*112");
+        //Goblin goblin2 = new Goblin("2*3*Snikchop*14*1000*179");
+
+        //Work work1 = new Work("1*Prospector*1*1000*2500*3");
+        //Work work2 = new Work("2*Miner*2*1500*2500*4");
         [Test]
         public void AVGWorktest() 
         {
@@ -154,16 +167,18 @@ namespace B0L3FV_HFT_2022232.Test
                 new Tool3()
                 {
                     Name = "Prospector",
-                    Height = 40,
+                    Income = 3000,
+                    Height = 112,
                     Hazard = 4,
-                    Income = 39000,
+                    
                 },
                 new Tool3()
                 {
                     Name = "Miner",
-                    Height = 30,
+                    Income = 1000,
+                    Height = 179,
                     Hazard = 5,
-                    Income = 29000,
+                    
                 }
             };
             ;
@@ -227,18 +242,18 @@ namespace B0L3FV_HFT_2022232.Test
                 {
                     Goblin_work = "Prospector",
                     Name = "Grubsnarl",
-                    Kill = 320,
-                    Id = 2,
-                    Type = "Hunt",
+                    Kill = 122,
+                    Id = 1,
+                    Type = "Mining",
                 },
-                //new Tool5() 
-                //{
-                //    Goblin_work="Miner",
-                //    Name="Snikchop",
-                //    Kill=122,
-                //    Id=1,
-                //    Type="Mining"
-                //}
+                new Tool5()
+                {
+                    Goblin_work="Miner",
+                    Name="Snikchop",
+                    Kill=320,
+                    Id=2,
+                    Type="Hunt"
+                }
             };
 
 
