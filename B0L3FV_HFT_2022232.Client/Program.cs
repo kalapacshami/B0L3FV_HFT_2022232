@@ -6,6 +6,8 @@ using System.Linq;
 using ConsoleTools;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace B0L3FV_HFT_2022232.Client
 {
@@ -103,6 +105,23 @@ namespace B0L3FV_HFT_2022232.Client
                 Console.WriteLine(ex.Message);
             }
         }
+
+        //[Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //public int MissionID { get; set; }
+        //public DateTime Date { get; set; }
+        //[Range(0, 5)]
+        //public int Hazard { get; set; }
+        //public int GoblinID { get; set; }
+        //public bool MissionCompleted { get; set; }
+        //public int MissionDuration { get; set; }
+        //[StringLength(100)]
+        //public string MType { get; set; }
+        //[StringLength(100)]
+        //public string Location { get; set; }
+        //public int Kills { get; set; }
+        //public int Loot { get; set; }
+        //public int Deaths { get; set; }
         static void List(string ent)
         {
             try
@@ -112,7 +131,7 @@ namespace B0L3FV_HFT_2022232.Client
                     List<Goblin> goblin = rest.Get<Goblin>("Goblin");
                     foreach (var item in goblin)
                     {
-                        Console.WriteLine(item.GoblinID + " " + item.GoblinName);
+                        Console.WriteLine(item.GoblinID + " Name:" + item.GoblinName + " WorkID"+item.WID+" Level:"+item.Level + " Money:" + item.Money + " Height:" + item.Height);
                     }
 
                 }
@@ -121,7 +140,7 @@ namespace B0L3FV_HFT_2022232.Client
                     List<Work> work = rest.Get<Work>("Work");
                     foreach (var item in work)
                     {
-                        Console.WriteLine(item.WID + " " + item.WName);
+                        Console.WriteLine(item.WID + " Type:" + item.WName + " HazardLevel:" + item.HazardLevel + " MinSalary:" + item.Min_Money + " MaxSalary:" + item.Max_Money);
                     }
                 }
                 else if (ent == "Mission")
@@ -129,7 +148,7 @@ namespace B0L3FV_HFT_2022232.Client
                     List<Mission> mission = rest.Get<Mission>("Mission");
                     foreach (var item in mission)
                     {
-                        Console.WriteLine(item.MissionID + " " + item.MType+" "+item.Location);
+                        Console.WriteLine(item.MissionID + " MissionType:" + item.MType+" Location:"+item.Location + " Goblin:" + item.Goblin + " Deaths:" + item.Deaths + " Kills:" + item.Kills + " Date:" + item.Date);
                     }
                 }
                 Console.ReadLine();
@@ -180,7 +199,7 @@ namespace B0L3FV_HFT_2022232.Client
         static void Main(string[] args)
         {
 
-            rest = new RestService("http://localhost:11828/","Goblin");
+            rest = new RestService("http://localhost:11828/api/", "Goblin");
 
 
 
@@ -217,7 +236,7 @@ namespace B0L3FV_HFT_2022232.Client
                 .Add("Goblins", () => goblinsubmenu.Show())
                 .Add("Works", () => Worksubmenu.Show())
                 .Add("Missions", () => Missionsubmenu.Show())
-
+                .Add("Non-Crud",()=>ToolSubMenu.Show())
                 .Add("Exit", ConsoleMenu.Close);
 
             menu.Show();
