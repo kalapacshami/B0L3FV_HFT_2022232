@@ -114,14 +114,58 @@
                         <TextBox Text="{Binding SelectedMission.Deaths}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                         <Label Content="Loot" FontSize="14" Padding="10" Background="LightBlue"/>
                         <TextBox Text="{Binding SelectedMission.Loot}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Button Command="{Binding CreateBrandCommand}" Content="Create Brand" Padding="10" Margin="10"/>
-                        <Button Command="{Binding DeleteBrandCommand}" Content="Delete Brand" Padding="10" Margin="10"/>
-                        <Button Command="{Binding UpdateBrandCommand}" Content="Update Brand" Padding="10" Margin="10"/>
+                        <Button Command="{Binding CreateMissionCommand}" Content="Create Mission" Padding="10" Margin="10"/>
+                        <Button Command="{Binding DeleteMIssionCommand}" Content="Delete Mission" Padding="10" Margin="10"/>
+                        <Button Command="{Binding UpdateMissionCommand}" Content="Update Mission" Padding="10" Margin="10"/>
                     </StackPanel>
 
                 </Grid>
             </TabItem>
 
+            <TabItem Header="Work">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ListBox SelectedItem="{Binding SelectedWork}" ItemsSource="{Binding Works}" HorizontalContentAlignment="Stretch">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Black" BorderThickness="1">
+                                    <StackPanel>
+                                        <Label Padding="10" Content="{Binding WID}" ContentStringFormat="Work Id: {0}"/>
+                                        <Label Padding="10" Content="{Binding WName}" ContentStringFormat="Work name: {0}"/>
+                                        <Label Padding="10" Content="{Binding LocID}" ContentStringFormat="Locaation ID: {0}"/>
+                                        <Label Padding="10" Content="{Binding Min_Money}" ContentStringFormat="Min Money: {0}"/>
+                                        <Label Padding="10" Content="{Binding Max_Money}" ContentStringFormat="Max Money: {0}"/>
+                                        <Label Padding="10" Content="{Binding HazardLevel}" ContentStringFormat="Hazard Level: {0}"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Work ID" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedWork.WID}" FontSize="14" Padding="10"/>
+                        <Label Content="Work name" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedWork.WName}" FontSize="14" Padding="10"/>
+                        <Label Content="Location ID" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedWork.LocID}" FontSize="14" Padding="10"/>
+                        <Label Content="Min Money" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedWork.Min_Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Max Money" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedWork.Max_Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Hazard" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedWork.HazardLevel}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Button Command="{Binding CreateWorkCommand}" Content="Create Work" Padding="10" Margin="10"/>
+                        <Button Command="{Binding DeleteWorkCommand}" Content="Delete Work" Padding="10" Margin="10"/>
+                        <Button Command="{Binding UpdateWorkCommand}" Content="Update Work" Padding="10" Margin="10"/>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
 
 
 
