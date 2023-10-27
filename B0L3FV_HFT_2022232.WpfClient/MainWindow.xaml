@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vms="clr-namespace:B0L3FV_HFT_2022232.WpfClient.ViewModels"
         xmlns:local="clr-namespace:B0L3FV_HFT_2022232.WpfClient"
-        
         mc:Ignorable="d"
         Title="Main Menu" Height="450" Width="800">
     <Window.DataContext>
