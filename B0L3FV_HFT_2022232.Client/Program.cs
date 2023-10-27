@@ -106,22 +106,7 @@ namespace B0L3FV_HFT_2022232.Client
             }
         }
 
-        //[Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //public int MissionID { get; set; }
-        //public DateTime Date { get; set; }
-        //[Range(0, 5)]
-        //public int Hazard { get; set; }
-        //public int GoblinID { get; set; }
-        //public bool MissionCompleted { get; set; }
-        //public int MissionDuration { get; set; }
-        //[StringLength(100)]
-        //public string MType { get; set; }
-        //[StringLength(100)]
-        //public string Location { get; set; }
-        //public int Kills { get; set; }
-        //public int Loot { get; set; }
-        //public int Deaths { get; set; }
+       
         static void List(string ent)
         {
             try
@@ -249,7 +234,7 @@ namespace B0L3FV_HFT_2022232.Client
         {
             try
             {
-                IEnumerable<Tool1> result = rest.Get<Tool1>("/Tool/AVGMission");
+                IEnumerable<Tool1> result = rest.Get<Tool1>("/api/Tool/AVGMission");
 
                 foreach (var item in result)
                 {
@@ -269,7 +254,7 @@ namespace B0L3FV_HFT_2022232.Client
 
             try
             {
-                IEnumerable<Tool2> result = rest.Get<Tool2>("/Tool/Missions");
+                IEnumerable<Tool2> result = rest.Get<Tool2>("/api/Tool/Missions");
 
                 foreach (var item in result)
                 {
@@ -289,7 +274,7 @@ namespace B0L3FV_HFT_2022232.Client
 
             try
             {
-                IEnumerable<Tool3> result = rest.Get<Tool3>("/Tool/AVGWork");
+                IEnumerable<Tool3> result = rest.Get<Tool3>("/api/Tool/AVGWork");
 
                 foreach (var item in result)
                 {
@@ -310,7 +295,7 @@ namespace B0L3FV_HFT_2022232.Client
 
             try
             {
-                IEnumerable<Tool4> result = rest.Get<Tool4>("/Tool/AVGGoblin");
+                IEnumerable<Tool4> result = rest.Get<Tool4>("/api/Tool/AVGGoblin");
 
                 foreach (var item in result)
                 {
@@ -330,7 +315,7 @@ namespace B0L3FV_HFT_2022232.Client
 
             try
             {
-                IEnumerable<Tool5> result = rest.Get<Tool5>("/Tool/KillCountMissions");
+                IEnumerable<Tool5> result = rest.Get<Tool5>("/api/Tool/KillCountMissions");
 
                 foreach (var item in result)
                 {

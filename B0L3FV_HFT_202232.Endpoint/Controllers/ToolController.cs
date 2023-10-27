@@ -23,7 +23,8 @@ namespace B0L3FV_HFT_2022232.Endpoint.Controllers
         [HttpGet]
         public IEnumerable<Tool1> AVGMission()
         {
-            return logic.AVGMission();
+            return logic.AVGMission(); 
+            
         }
 
         [HttpGet]
