@@ -1,3 +1,4 @@
+using B0L3FV_HFT_2022232.Endpoint.Services;
 using B0L3FV_HFT_2022232.Logic;
 using B0L3FV_HFT_2022232.Models;
 using B0L3FV_HFT_2022232.Repository;
@@ -37,6 +38,7 @@ namespace B0L3FV_HFT_202232.Endpoint
             services.AddTransient<IMissionLogic, MissionLogic>();
             services.AddTransient<IGoblinLogic, GoblinLogic>();
             services.AddTransient<IWorkLogic, WorkLogic>();
+            services.AddSignalR();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -62,6 +64,7 @@ namespace B0L3FV_HFT_202232.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }
