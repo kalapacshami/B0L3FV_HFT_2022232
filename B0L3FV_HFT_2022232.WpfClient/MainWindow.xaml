@@ -6,14 +6,100 @@
         xmlns:vms="clr-namespace:B0L3FV_HFT_2022232.WpfClient.ViewModels"
         xmlns:local="clr-namespace:B0L3FV_HFT_2022232.WpfClient"
         mc:Ignorable="d"
-        Title="Main Menu" Height="450" Width="800">
+        Title="Main Menu" Height="827" Width="1558">
     <Window.DataContext>
         <vms:MainWindowViewModel></vms:MainWindowViewModel>
     </Window.DataContext>
     <Grid>
-        
-        
-        
+        <TabControl>
+
+            <TabItem Header="Goblins">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <ListBox SelectedItem="{Binding SelectedGoblin}" ItemsSource="{Binding Goblins}" HorizontalContentAlignment="Stretch">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Black" BorderThickness="1">
+                                    <StackPanel>
+                                        <Label Padding="10" Content="{Binding GoblinID}" ContentStringFormat="Goblin ID: {0}"></Label>
+                                        <Label Padding="10" Content="{Binding WID}" ContentStringFormat="Goblin Work ID: {0}"></Label>
+                                        <Label Padding="10" Content="{Binding GoblinName}" ContentStringFormat="Goblin's Name: {0}"></Label>
+                                        <Label Padding="10" Content="{Binding Level}" ContentStringFormat="Goblin's Level: {0}"></Label>
+                                        <Label Padding="10" Content="{Binding Money}" ContentStringFormat="Goblin's Money: {0}"></Label>
+                                        <Label Padding="10" Content="{Binding Height}" ContentStringFormat="Gobln Height: {0}"></Label>
+                                    </StackPanel>
+
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Goblin ID" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedGoblin.GoblinID}" FontSize="14" Padding="10"/>
+                        <Label Content="WID" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedGoblin.WID}" FontSize="14" Padding="10"/>
+                        <Label Content="Goblin Name" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedGoblin.GoblinName}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Goblin Level" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedGoblin.Level}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Goblin Money" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedGoblin.Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Goblin Height" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedGoblin.Height}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Button Command="{Binding CreateGoblinCommand}" Content="Create Goblin" Padding="10" Margin="10"/>
+                        <Button Command="{Binding DeleteGoblinCommand}" Content="Delete Goblin" Padding="10" Margin="10"/>
+                        <Button Command="{Binding UpdateGoblinCommand}" Content="Update Goblin" Padding="10" Margin="10"/>
+
+                    </StackPanel>
+
+
+                </Grid>
+
+            </TabItem>
+            
+            <TabItem Header="Missions">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ListBox SelectedItem="{Binding SelectedBrand}" ItemsSource="{Binding Brands}" HorizontalContentAlignment="Stretch">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Black" BorderThickness="1">
+                                    <StackPanel>
+                                        <Label Padding="10" Content="{Binding Id}" ContentStringFormat="Brand ID: {0}"/>
+                                        <Label Padding="10" Content="{Binding Name}" ContentStringFormat="Brand Name: {0}"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <StackPanel Grid.Column="1">
+                        <Label Content="BrandName" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedBrand.Name}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Button Command="{Binding CreateBrandCommand}" Content="Create Brand" Padding="10" Margin="10"/>
+                        <Button Command="{Binding DeleteBrandCommand}" Content="Delete Brand" Padding="10" Margin="10"/>
+                        <Button Command="{Binding UpdateBrandCommand}" Content="Update Brand" Padding="10" Margin="10"/>
+                    </StackPanel>
+
+                </Grid>
+            </TabItem>
+
+
+
+
+
+        </TabControl>
+
+
 
     </Grid>
 </Window>
