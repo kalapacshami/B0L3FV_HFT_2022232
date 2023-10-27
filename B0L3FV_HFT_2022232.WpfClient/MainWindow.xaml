@@ -6,7 +6,7 @@
         xmlns:vms="clr-namespace:B0L3FV_HFT_2022232.WpfClient.ViewModels"
         xmlns:local="clr-namespace:B0L3FV_HFT_2022232.WpfClient"
         mc:Ignorable="d"
-        Title="Main Menu" Height="827" Width="1558">
+        Title="Main Menu" Height="1467" Width="3110">
     <Window.DataContext>
         <vms:MainWindowViewModel></vms:MainWindowViewModel>
     </Window.DataContext>
@@ -61,7 +61,7 @@
                 </Grid>
 
             </TabItem>
-            
+
             <TabItem Header="Missions">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -69,13 +69,22 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
-                    <ListBox SelectedItem="{Binding SelectedBrand}" ItemsSource="{Binding Brands}" HorizontalContentAlignment="Stretch">
+                    <ListBox SelectedItem="{Binding SelectedMission}" ItemsSource="{Binding Missions}" HorizontalContentAlignment="Stretch">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <Border BorderBrush="Black" BorderThickness="1">
                                     <StackPanel>
-                                        <Label Padding="10" Content="{Binding Id}" ContentStringFormat="Brand ID: {0}"/>
-                                        <Label Padding="10" Content="{Binding Name}" ContentStringFormat="Brand Name: {0}"/>
+                                        <Label Padding="10" Content="{Binding MissionID}" ContentStringFormat="Mission ID: {0}"/>
+                                        <Label Padding="10" Content="{Binding Date}" ContentStringFormat="Date: {0}"/>
+                                        <Label Padding="10" Content="{Binding GoblinID}" ContentStringFormat="Goblin ID: {0}"/>
+                                        <Label Padding="10" Content="{Binding Hazard}" ContentStringFormat="Hazard: {0}"/>
+                                        <Label Padding="10" Content="{Binding MissionCompleted}" ContentStringFormat="Completed: {0}"/>
+                                        <Label Padding="10" Content="{Binding MissionDuration}" ContentStringFormat="Duration: {0}"/>
+                                        <Label Padding="10" Content="{Binding MType}" ContentStringFormat="Mission type: {0}"/>
+                                        <Label Padding="10" Content="{Binding Location}" ContentStringFormat="Location: {0}"/>
+                                        <Label Padding="10" Content="{Binding Kills}" ContentStringFormat="Kills: {0}"/>
+                                        <Label Padding="10" Content="{Binding Deaths}" ContentStringFormat="Deaths: {0}"/>
+                                        <Label Padding="10" Content="{Binding Loot}" ContentStringFormat="Loot: {0}"/>
                                     </StackPanel>
                                 </Border>
                             </DataTemplate>
@@ -83,8 +92,28 @@
                     </ListBox>
 
                     <StackPanel Grid.Column="1">
-                        <Label Content="BrandName" FontSize="14" Padding="10" Background="LightBlue"/>
-                        <TextBox Text="{Binding SelectedBrand.Name}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Mission ID" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.MissionID}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Date" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.Date}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="GoblinID" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.GoblinID}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Hazard" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.Hazard}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Mission is Completed" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.MissionCompleted}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Mission Duration" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.MissionDuration}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Mission Type" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.MType}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Location" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.Location}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Kills" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.Kills}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Deaths" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.Deaths}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
+                        <Label Content="Loot" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <TextBox Text="{Binding SelectedMission.Loot}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                         <Button Command="{Binding CreateBrandCommand}" Content="Create Brand" Padding="10" Margin="10"/>
                         <Button Command="{Binding DeleteBrandCommand}" Content="Delete Brand" Padding="10" Margin="10"/>
                         <Button Command="{Binding UpdateBrandCommand}" Content="Update Brand" Padding="10" Margin="10"/>
