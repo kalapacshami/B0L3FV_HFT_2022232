@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace B0L3FV_HFT_2022232.WpfClient.Services
 {
-    class GoblinMenuViaWindow
+    public class GoblinMenuViaWindow : IGoblinMenuService
     {
+        public void OpenGoblinMenuWindow()
+        {
+            new GoblinMenuWindow().ShowDialog();
+        }
     }
 }

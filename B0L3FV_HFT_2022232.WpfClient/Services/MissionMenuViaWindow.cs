@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace B0L3FV_HFT_2022232.WpfClient.Services
 {
-    class MissionMenuViaWindow
+    public class MissionMenuViaWindow : IMissionMenuService
     {
+        
+
+        public void OpenMissionMenuWindow()
+        {
+            new MissionMenuWindow().ShowDialog();
+        }
     }
 }
