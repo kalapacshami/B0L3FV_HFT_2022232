@@ -130,7 +130,7 @@ namespace B0L3FV_HFT_2022232.WpfClient.ViewModels
             if (!IsInDesingMode)
             {
                 Goblins = new RestCollection<Goblin>("http://localhost:11828/", "goblin","hub");
-                Missions = new RestCollection<Mission>("http://localhost:11828/","mission", "hub"); //hub
+                Missions = new RestCollection<Mission>("http://localhost:11828/","mission", "hub"); 
                 Works = new RestCollection<Work>("http://localhost:11828/","work", "hub");
 
                 CreateGoblinCommand = new RelayCommand(() =>
