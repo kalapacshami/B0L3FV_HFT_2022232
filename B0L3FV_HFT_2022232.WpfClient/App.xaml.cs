@@ -13,9 +13,5 @@ namespace B0L3FV_HFT_2022232.WpfClient
     /// </summary>
     public partial class App : Application
     {
-        public App()
-        {
-            
-        }
     }
 }
