@@ -131,6 +131,92 @@ namespace B0L3FV_HFT_2022232.WpfClient
                 Goblins = new RestCollection<Goblin>("http://localhost:11828/", "goblin", "hub");
                 Missions = new RestCollection<Mission>("http://localhost:11828/", "mission", "hub");
                 Works = new RestCollection<Work>("http://localhost:11828/", "work", "hub");
+
+                CreateGoblinCommand = new RelayCommand(() => 
+                {
+                    Goblins.Add(new Goblin()
+                    {
+                        
+                    });
+                
+                
+                });
+
+                UpdateGoblinCommand = new RelayCommand(() =>
+                {
+                    Goblins.Update(SelectedGoblin);
+
+
+                });
+
+                DeleteGoblinCommand = new RelayCommand(() =>
+                {
+                    Goblins.Delete(SelectedGoblin.GoblinID);
+                },
+                () =>
+                {
+                    return SelectedGoblin != null;
+                });
+                //////
+                ///
+
+                CreateMissionCommand = new RelayCommand(() =>
+                {
+                    Missions.Add(new Mission()
+                    {
+
+                    });
+
+
+                });
+
+                UpdateMissionCommand = new RelayCommand(() =>
+                {
+                    Missions.Update(SelectedMission);
+
+
+                });
+
+                DeleteMissionCommand = new RelayCommand(() =>
+                {
+                    Missions.Delete(SelectedMission.MissionID);
+                },
+                () =>
+                {
+                    return SelectedMission != null;
+                });
+
+                //////
+                ///
+
+                CreateWorkCommand = new RelayCommand(() =>
+                {
+                    Works.Add(new Work()
+                    {
+
+                    });
+
+
+                });
+
+                UpdateWorkCommand = new RelayCommand(() =>
+                {
+                    Works.Update(SelectedWork);
+
+
+                });
+
+                DeleteWorkCommand = new RelayCommand(() =>
+                {
+                    Works.Delete(SelectedWork.WID);
+                },
+                () =>
+                {
+                    return SelectedWork != null;
+                });
+
+
+
             }
             
         }
