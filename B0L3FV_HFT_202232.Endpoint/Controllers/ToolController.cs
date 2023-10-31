@@ -7,7 +7,7 @@ using static B0L3FV_HFT_2022232.Logic.MissionLogic;
 
 namespace B0L3FV_HFT_2022232.Endpoint.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("[controller]/[action]")]
     [ApiController]
     public class ToolController : ControllerBase
     {

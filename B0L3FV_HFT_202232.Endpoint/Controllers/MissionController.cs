@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace B0L3FV_HFT_2022232.Endpoint.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class MissionController : ControllerBase
     {
