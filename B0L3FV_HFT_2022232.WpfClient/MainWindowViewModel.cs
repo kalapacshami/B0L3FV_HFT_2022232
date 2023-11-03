@@ -56,7 +56,7 @@ namespace B0L3FV_HFT_2022232.WpfClient
             {
                 if (value != null)
                 {
-                    SelectedMission = new Mission()
+                    selectedMission = new Mission()
                     {
                         MissionID = value.MissionID,
                         Date = value.Date,
@@ -136,7 +136,11 @@ namespace B0L3FV_HFT_2022232.WpfClient
                 {
                     Goblins.Add(new Goblin()
                     {
-                        
+                        WID = SelectedGoblin.WID,
+                        GoblinName = SelectedGoblin.GoblinName,
+                        Level = SelectedGoblin.Level,
+                        Money = SelectedGoblin.Money,
+                        Height = SelectedGoblin.Money
                     });
                 
                 
@@ -164,7 +168,16 @@ namespace B0L3FV_HFT_2022232.WpfClient
                 {
                     Missions.Add(new Mission()
                     {
-
+                        Date = SelectedMission.Date,
+                        GoblinID = SelectedMission.GoblinID,
+                        Hazard = SelectedMission.Hazard,
+                        MissionCompleted = SelectedMission.MissionCompleted,
+                        MissionDuration = SelectedMission.MissionDuration,
+                        MType = SelectedMission.MType,
+                        Location = SelectedMission.Location,
+                        Kills = SelectedMission.Kills,
+                        Deaths = SelectedMission.Deaths,
+                        Loot = SelectedMission.Loot,
                     });
 
 
@@ -193,7 +206,11 @@ namespace B0L3FV_HFT_2022232.WpfClient
                 {
                     Works.Add(new Work()
                     {
-
+                        WName= SelectedWork.WName,
+                        Min_Money= SelectedWork.Min_Money,
+                        Max_Money= SelectedWork.Max_Money,
+                        HazardLevel= SelectedWork.HazardLevel,
+                        LocID= SelectedWork.LocID,
                     });
 
 
@@ -215,6 +232,9 @@ namespace B0L3FV_HFT_2022232.WpfClient
                     return SelectedWork != null;
                 });
 
+                //SelectedGoblin = new Goblin();
+                //SelectedMission = new Mission();
+                //SelectedWork = new Work();
 
 
             }
