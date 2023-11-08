@@ -25,9 +25,9 @@ namespace B0L3FV_HFT_202223
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseStaticFiles();
+            
             app.UseRouting();
-
+            app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>

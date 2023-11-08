@@ -1,0 +1,28 @@
+﻿﻿table {
+    width: 100%;
+}
+table, th, td {
+    border: 2px solid black;
+}
+table {
+    border-collapse: collapse;
+}
+th, td {
+    padding: 6px;
+}
+th {
+    background-color: lightgreen;
+}
+#goblinformdiv {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+    #goblinformdiv label, button, input {
+        margin: 10px;
+        padding: 6px;
+    }
+    #goblinformdiv label {
+        font-weight: bolder;
+    }

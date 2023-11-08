@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <_ContentIncludedByDefault Remove="wwwroot\index.html" />
   </ItemGroup>
 
 </Project>

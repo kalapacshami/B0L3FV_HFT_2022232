@@ -56,6 +56,13 @@ namespace B0L3FV_HFT_202232.Endpoint
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "B0L3FV_HFT_202232.Endpoint v1"));
             }
+            
+
+            app.UseCors(x => x
+            .AllowCredentials()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .WithOrigins("http://localhost:12196"));
 
             app.UseRouting();
 
