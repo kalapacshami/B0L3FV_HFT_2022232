@@ -40,15 +40,15 @@
                     </ListBox>
                     <ScrollViewer Grid.Column="1">
                     <StackPanel Grid.Column="1">
-                        <Label Content="WID" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <Label Content="WID" FontSize="14" Padding="10" Background="LightGreen"/>
                         <TextBox Text="{Binding SelectedGoblin.WID}" FontSize="14" Padding="10"/>
-                        <Label Content="Goblin Name" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Goblin Name" FontSize="14" Padding="10" Background="LightGreen"/>
                         <TextBox Text="{Binding SelectedGoblin.GoblinName}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Goblin Level" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Goblin Level" FontSize="14" Padding="10" Background="LightGreen"/>
                         <TextBox Text="{Binding SelectedGoblin.Level}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Goblin Money" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Goblin Money" FontSize="14" Padding="10" Background="LightGreen"/>
                         <TextBox Text="{Binding SelectedGoblin.Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Goblin Height" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Goblin Height" FontSize="14" Padding="10" Background="LightGreen"/>
                         <TextBox Text="{Binding SelectedGoblin.Height}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                         <Button Command="{Binding CreateGoblinCommand}" Content="Create Goblin" Padding="10" Margin="10"/>
                         <Button Command="{Binding DeleteGoblinCommand}" Content="Delete Goblin" Padding="10" Margin="10"/>
@@ -92,27 +92,27 @@
 
                     <ScrollViewer Grid.Column="1">
                         <StackPanel Grid.Column="1">
-                        <Label Content="Date" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <Label Content="Date" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.Date}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        
-                        <Label Content="GoblinID" FontSize="14" Padding="10" Background="LightBlue"/>
+
+                            <Label Content="GoblinID" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.GoblinID}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Hazard" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Hazard" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.Hazard}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Mission is Completed" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Mission is Completed" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.MissionCompleted}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                       
-                        <Label Content="Mission Duration" FontSize="14" Padding="10" Background="LightBlue"/>
+
+                            <Label Content="Mission Duration" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.MissionDuration}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Mission Type" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Mission Type" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.MType}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Location" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Location" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.Location}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Kills" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Kills" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.Kills}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Deaths" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Deaths" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.Deaths}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Loot" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Loot" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.Loot}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                         <Button Command="{Binding CreateMissionCommand}" Content="Create Mission" Padding="10" Margin="10"/>
                         <Button Command="{Binding DeleteMissionCommand}" Content="Delete Mission" Padding="10" Margin="10"/>
@@ -148,15 +148,15 @@
 
                     <ScrollViewer Grid.Column="1">
                     <StackPanel Grid.Column="1">
-                        <Label Content="Work name" FontSize="14" Padding="10" Background="LightBlue"/>
+                        <Label Content="Work name" FontSize="14" Padding="10" Background="Goldenrod"/>
                         <TextBox Text="{Binding SelectedWork.WName}" FontSize="14" Padding="10"/>
-                        <Label Content="Location ID" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Location ID" FontSize="14" Padding="10" Background="Goldenrod"/>
                         <TextBox Text="{Binding SelectedWork.LocID}" FontSize="14" Padding="10"/>
-                        <Label Content="Min Money" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Min Money" FontSize="14" Padding="10" Background="Goldenrod"/>
                         <TextBox Text="{Binding SelectedWork.Min_Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Max Money" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Max Money" FontSize="14" Padding="10" Background="Goldenrod"/>
                         <TextBox Text="{Binding SelectedWork.Max_Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                        <Label Content="Hazard" FontSize="14" Padding="10" Background="LightBlue"/>
+                            <Label Content="Hazard" FontSize="14" Padding="10" Background="Goldenrod"/>
                         <TextBox Text="{Binding SelectedWork.HazardLevel}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                         <Button Command="{Binding CreateWorkCommand}" Content="Create Work" Padding="10" Margin="10"/>
                         <Button Command="{Binding DeleteWorkCommand}" Content="Delete Work" Padding="10" Margin="10"/>
