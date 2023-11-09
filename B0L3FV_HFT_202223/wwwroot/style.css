@@ -1,5 +1,6 @@
 ﻿﻿table {
     width: 100%;
+    
 }
 table, th, td {
     border: 2px solid black;
@@ -7,12 +8,35 @@ table, th, td {
 table {
     border-collapse: collapse;
 }
+   
+table button {
+        padding: 2px;
+    }
+
 th, td {
-    padding: 6px;
+    padding: 10px;
+    
 }
 th {
     background-color: lightgreen;
 }
+
+#updateformdiv {
+    display: none;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#updateformdiv label, button, input 
+{
+        margin: 10px;
+        padding: 7px;
+}
+
+    #updateformdiv label {
+        font-weight: bolder;
+    }
+
 #goblinformdiv {
     display: flex;
     flex-direction: column;
@@ -26,3 +50,5 @@ th {
     #goblinformdiv label {
         font-weight: bolder;
     }
+
+
