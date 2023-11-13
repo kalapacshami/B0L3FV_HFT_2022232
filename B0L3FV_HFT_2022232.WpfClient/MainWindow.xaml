@@ -44,7 +44,7 @@
                         <TextBox Text="{Binding SelectedGoblin.WID}" FontSize="14" Padding="10"/>
                             <Label Content="Goblin Name" FontSize="14" Padding="10" Background="LightGreen"/>
                         <TextBox Text="{Binding SelectedGoblin.GoblinName}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                            <Label Content="Goblin Level" FontSize="14" Padding="10" Background="LightGreen"/>
+                            <Label Content="Goblin Level (Max 20)" FontSize="14" Padding="10" Background="LightGreen"/>
                         <TextBox Text="{Binding SelectedGoblin.Level}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                             <Label Content="Goblin Money" FontSize="14" Padding="10" Background="LightGreen"/>
                         <TextBox Text="{Binding SelectedGoblin.Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
@@ -97,7 +97,7 @@
 
                             <Label Content="GoblinID" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.GoblinID}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                            <Label Content="Hazard" FontSize="14" Padding="10" Background="Tomato"/>
+                            <Label Content="Hazard (0-5)" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.Hazard}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                             <Label Content="Mission is Completed" FontSize="14" Padding="10" Background="Tomato"/>
                         <TextBox Text="{Binding SelectedMission.MissionCompleted}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
@@ -156,7 +156,7 @@
                         <TextBox Text="{Binding SelectedWork.Min_Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                             <Label Content="Max Money" FontSize="14" Padding="10" Background="Goldenrod"/>
                         <TextBox Text="{Binding SelectedWork.Max_Money}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
-                            <Label Content="Hazard" FontSize="14" Padding="10" Background="Goldenrod"/>
+                            <Label Content="Hazard Level (0-5)" FontSize="14" Padding="10" Background="Goldenrod"/>
                         <TextBox Text="{Binding SelectedWork.HazardLevel}" FontSize="14" Padding="10" Margin="0,0,0,30"/>
                         <Button Command="{Binding CreateWorkCommand}" Content="Create Work" Padding="10" Margin="10"/>
                         <Button Command="{Binding DeleteWorkCommand}" Content="Delete Work" Padding="10" Margin="10"/>
