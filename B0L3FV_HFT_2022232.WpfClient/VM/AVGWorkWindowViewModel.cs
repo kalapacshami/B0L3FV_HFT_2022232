@@ -58,7 +58,7 @@ namespace B0L3FV_HFT_2022232.WpfClient.VM
 
                     foreach (var item in AVGWork)
                     {
-                        Answer += "Name of the Work: " + item.Name + ", Avg. Income: " + item.Income + " , Avg. Height: " + item.Height + " , Avg. Hazard: " + item.Hazard+ Environment.NewLine;
+                        Answer += "Type of the Work: " + item.Name + ", Avg. Income: " + item.Income + " , Avg. Height: " + item.Height + " , Avg. Hazard: " + item.Hazard+ Environment.NewLine;
                     }
                 });
             }

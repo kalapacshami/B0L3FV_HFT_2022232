@@ -12,7 +12,7 @@
     </Window.DataContext>
     <Grid>
         <StackPanel>
-            <Button x:Name="submitButton" Content="Show murder infos" FontSize="14" Padding="6" Command="{Binding KillMissionCommand}"></Button>
+            <Button x:Name="submitButton" Content="Show kill infos" FontSize="14" Padding="6" Command="{Binding KillMissionCommand}"></Button>
             <Label FontSize="14" Content="{Binding Answer, UpdateSourceTrigger=PropertyChanged}"></Label>
         </StackPanel>
     </Grid>
