@@ -4,9 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:B0L3FV_HFT_2022232.WpfClient"
+        xmlns:vms="clr-namespace:B0L3FV_HFT_2022232.WpfClient.VM"
         mc:Ignorable="d"
         Title="AVGMissionWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vms:AVGMissionWindowViewModel></vms:AVGMissionWindowViewModel>
+    </Window.DataContext>
     <Grid>
-        
+        <StackPanel>
+            <Button x:Name="submitButton" Content="Show average statistics of the missions" FontSize="14" Padding="6" Command="{Binding AVGMissionsCommand}"></Button>
+            <Label FontSize="14" Content="{Binding Answer, UpdateSourceTrigger=PropertyChanged}"></Label>
+        </StackPanel>
     </Grid>
 </Window>
