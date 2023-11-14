@@ -15,6 +15,7 @@ table button {
 
 th, td {
     padding: 10px;
+    background-color: whitesmoke;
     
 }
 th {
@@ -50,5 +51,8 @@ th {
     #goblinformdiv label {
         font-weight: bolder;
     }
+
+
+
 
 

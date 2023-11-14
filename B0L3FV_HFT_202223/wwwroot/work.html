@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Work Manager</title>
+    <link rel="stylesheet" href="workstyle.css" />
+</head>
+<body style="background-color: antiquewhite">
+    <h1>Work Database Manager</h1>
+
+    <div id="workformdiv">
+        <label>Work Name</label>
+        <input type="text" id="workname" />
+        <button type="button" onclick="createWork()"> Add Work</button>
+    </div>
+    <div id="updateformdiv">
+        <label>Work Name To Update</label>
+        <input type="text" id="workNameToUpdate" />
+        <label>Min Money</label>
+        <input type="text" id="workMinMoneyToUpdate" />
+        <label>Max Money</label>
+        <input type="text" id="workMaxMoneyToUpdate" />
+        <label>Hazard Level</label>
+        <input type="text" id="workHazardToUpdate" />
+    </div>
+
+    <table >
+        <thead>
+            <tr>ID</tr>
+            <tr>Name</tr>
+            <tr>Min Money</tr>
+            <tr>Max Money</tr>
+            <tr>Hazard Level</tr>
+        </thead>
+        <tbody id="resultareaWork"></tbody>
+    </table>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="work.js"></script>
+</body>
+</html>

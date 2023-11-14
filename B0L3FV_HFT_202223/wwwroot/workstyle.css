@@ -1,0 +1,56 @@
+﻿#workformdiv {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+
+    #workformdiv label, button, input {
+        margin: 10px;
+        padding: 6px;
+    }
+
+    #workformdiv label {
+        font-weight: bolder;
+    }
+
+﻿table {
+    width: 100%;
+}
+
+table, th, td {
+    border: 2px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+    table button {
+        padding: 2px;
+    }
+
+th, td {
+    padding: 10px;
+    background-color: whitesmoke;
+}
+
+th {
+    background-color: lightslategray;
+}
+
+
+#updateformdiv {
+    display: none;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+    #updateformdiv label, button, input {
+        margin: 10px;
+        padding: 7px;
+    }
+
+    #updateformdiv label {
+        font-weight: bolder;
+    }
