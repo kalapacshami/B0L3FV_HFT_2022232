@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace B0L3FV_HFT_2022232.WpfClient
 {
     /// <summary>
-    /// Interaction logic for NonCrudWindow.xaml
+    /// Interaction logic for AVGWorkWindow.xaml
     /// </summary>
-    public partial class NonCrudWindow : Window
+    public partial class AVGWorkWindow : Window
     {
-        public NonCrudWindow()
+        public AVGWorkWindow()
         {
             InitializeComponent();
         }

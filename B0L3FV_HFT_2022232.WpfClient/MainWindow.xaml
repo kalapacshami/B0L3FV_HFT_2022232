@@ -53,7 +53,13 @@
                         <Button Command="{Binding CreateGoblinCommand}" Content="Create Goblin" Padding="10" Margin="10"/>
                         <Button Command="{Binding DeleteGoblinCommand}" Content="Delete Goblin" Padding="10" Margin="10"/>
                         <Button Command="{Binding UpdateGoblinCommand}" Content="Update Goblin" Padding="10" Margin="10"/>
-                            <Button Click="Button_Click" Content="List Non-Crud Methods" Padding="10" Margin="10"/>
+                        <!--non-crud-->
+                            <Button Content="AVG of Missions" Padding="10" Margin="10" Click="Button_ClickAVGMission"/>
+                            <Button  Content="Mission Status" Padding="10" Margin="10" Click="Button_Click_MissionStatus"/>
+                            <Button Content="AVG of Work" Padding="10" Margin="10" Click="Button_Click_AVGWork"/>
+                            <Button  Content="AVG of Goblin" Padding="10" Margin="10" Click="Button_Click_AVGGoblin"/>
+                            <Button  Content="Kill Counts" Padding="10" Margin="10" Click="Button_Click_KillCounts"/>
+
 
                         </StackPanel>
                     </ScrollViewer>

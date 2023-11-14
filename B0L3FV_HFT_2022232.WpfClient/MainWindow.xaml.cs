@@ -25,10 +25,35 @@ namespace B0L3FV_HFT_2022232.WpfClient
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_ClickAVGMission(object sender, RoutedEventArgs e)
         {
-            NonCrudWindow nonCrudwindow= new NonCrudWindow();
-            nonCrudwindow.Show();
+            AVGMissionWindow aVGMissionWindow = new AVGMissionWindow();
+            aVGMissionWindow.ShowDialog();           
+
+        }
+
+        private void Button_Click_MissionStatus(object sender, RoutedEventArgs e)
+        {
+            MissionStatusWindow missionStatusWindow = new MissionStatusWindow();
+            missionStatusWindow.ShowDialog();
+        }
+
+        private void Button_Click_AVGWork(object sender, RoutedEventArgs e)
+        {
+            AVGWorkWindow aVGWorkWindow = new AVGWorkWindow();
+            aVGWorkWindow.ShowDialog();
+        }
+
+        private void Button_Click_AVGGoblin(object sender, RoutedEventArgs e)
+        {
+            AVGGoblinWindow aVGGoblinWindow = new AVGGoblinWindow();
+            aVGGoblinWindow.ShowDialog();
+        }
+
+        private void Button_Click_KillCounts(object sender, RoutedEventArgs e)
+        {
+            KillCountWindow killCountWindow = new KillCountWindow();
+            killCountWindow.ShowDialog();
         }
     }
 }
