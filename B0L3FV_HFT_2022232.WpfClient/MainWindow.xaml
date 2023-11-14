@@ -53,8 +53,9 @@
                         <Button Command="{Binding CreateGoblinCommand}" Content="Create Goblin" Padding="10" Margin="10"/>
                         <Button Command="{Binding DeleteGoblinCommand}" Content="Delete Goblin" Padding="10" Margin="10"/>
                         <Button Command="{Binding UpdateGoblinCommand}" Content="Update Goblin" Padding="10" Margin="10"/>
+                            <Button Click="Button_Click" Content="List Non-Crud Methods" Padding="10" Margin="10"/>
 
-                    </StackPanel>
+                        </StackPanel>
                     </ScrollViewer>
 
                 </Grid>

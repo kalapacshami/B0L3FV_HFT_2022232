@@ -108,6 +108,7 @@ namespace B0L3FV_HFT_2022232.WpfClient
         public ICommand CreateMissionCommand { get;  set; }
         public ICommand CreateWorkCommand { get;  set; }
 
+        
         public ICommand DeleteGoblinCommand { get; set; }
         public ICommand DeleteMissionCommand { get;  set; }
         public ICommand DeleteWorkCommand { get;  set; }
@@ -161,6 +162,9 @@ namespace B0L3FV_HFT_2022232.WpfClient
                 {
                     return SelectedGoblin != null;
                 });
+                ////
+                ///
+                
                 //////
                 ///
 
