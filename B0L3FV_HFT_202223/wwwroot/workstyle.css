@@ -1,20 +1,5 @@
-﻿#workformdiv {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    border: 2px solid black;
-}
-
-    #workformdiv label, button, input {
-        margin: 10px;
-        padding: 6px;
-    }
-
-    #workformdiv label {
-        font-weight: bolder;
-    }
-
-﻿table {
+﻿
+table{
     width: 100%;
 }
 
@@ -35,7 +20,8 @@ th, td {
     background-color: whitesmoke;
 }
 
-th {
+th 
+{
     background-color: lightslategray;
 }
 
