@@ -95,7 +95,7 @@ function createWork() {
 
 }
 
-function updateGoblin() {
+function updateWork() {
     document.getElementById('updateformdiv').style.display = 'none';
     let name = document.getElementById('workNameToUpdate').value;
     let minmoneyup = document.getElementById('workMinMoneyToUpdate').value;
@@ -105,7 +105,7 @@ function updateGoblin() {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
-            { wName: name, wid: workIdToUpdate, min_Money: minmoneyup, max_Money: maxmoneyup, hazardLevel: moneyhazardup })
+            { wName: name, wid: workIdToUpdate, min_Money: minmoneyup, max_Money: maxmoneyup, hazardLevel: hazardup })
     })
         .then(response => response)
         .then(data => {

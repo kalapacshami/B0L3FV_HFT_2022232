@@ -8,21 +8,62 @@
 <body style="background-color: antiquewhite">
     <h1>Mission Manager Page</h1>
 
-    <div id="workformdiv">
-        <label>Work Name</label>
-        <input type="text" id="workname" />
-        <button type="button" onclick="createWork()"> Add Work</button>
+    <div id="missionformdiv">
+        <label>Mission Type</label>
+        <input type="text" id="missionname" />
+        <label>Mission Hazard Level</label>
+        <input type="text" id="missionhazard" />
+        <label>Mission Location</label>
+        <input type="text" id="missionloc" />
+        <button type="button" onclick="createMission()"> Add Mission</button>
     </div>
     <div id="updateformdiv">
-        <label>Work Name To Update</label>
-        <input type="text" id="workNameToUpdate" />
-        <label>Min Money</label>
-        <input type="text" id="workMinMoneyToUpdate" />
-        <label>Max Money</label>
-        <input type="text" id="workMaxMoneyToUpdate" />
-        <label>Hazard Level</label>
-        <input type="text" id="workHazardToUpdate" />
+        <label>Mission Type To Update</label>
+        <input type="text" id="missionTypeToUpdate" />
+        <label>Duration To Update</label>
+        <input type="text" id="missionDurToUpdate" />
+        <label>Complete To Update</label>
+        <input type="text" id="missionCompToUpdate" />
+        <label>Loot To Update</label>
+        <input type="text" id="missionLootToUpdate" />
+        <label>Location To Update</label>
+        <input type="text" id="missionLocToUpdate" />
+        <label>Kills To Update</label>
+        <input type="text" id="missionKillToUpdate" />
+        <label>Goblin ID To Update</label>
+        <input type="text" id="missionGobIDToUpdate" />
+        <label>Deaths To Update</label>
+        <input type="text" id="missionDeathToUpdate" />
+        <label>Date To Update</label>
+        <input type="text" id="missionDateToUpdate" />
+        <button type="button" onclick="updateMission()">Update Mission</button>
+
+
     </div>
 
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Duration</th>
+                <th>Completed</th>
+                <th>Type</th>
+                <th>Loot</th>
+                <th>Location</th>
+                <th>Kills</th>
+                <th>Hazard</th>
+                <th>Goblin ID</th>
+                <th>Deaths</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultareaMission">
+        </tbody>
+    </table>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="missionscript.js"></script>
 </body>
-</html>
+</html >

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Non-Crud Page</title>
+    <link  rel="stylesheet" href="noncrud.css"/>
+</head>
+<body style="background-color: antiquewhite">
+    <h1>Non-Crud Page</h1>
+    <h3>AVG Goblin Non-Crud Results</h3>
+    <table style="display: inline-block">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>AVG Loot</th>
+                <th>AVG Kill</th>
+                <th>AVG Death</th>
+                <th>AVG Duration in Battle</th>
+            </tr>
+        </thead>
+        <tbody id="resultareanoncrudgoblin"></tbody>
+    </table>
+    <h3>AVG Mission Non-Crud Results</h3>
+    <table style="float:left">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>AVG Loot</th>
+                <th>AVG Level of Goblin</th>
+                <th>AVG Height of Goblin</th>
+                <th>AVG Hazard of a Mission</th>
+            </tr>
+        </thead>
+        <tbody id="resultareanoncrudmission"></tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="noncrud.js"></script>
+</body>
+</html>

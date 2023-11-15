@@ -8,58 +8,62 @@
 <body style="background-color: antiquewhite">
     <p style="text-align:center;"><img src="output-onlinepngtools.png" alt="Logo"></p>
 
-        <form action="work.html" method="get" target="_blank">
+    <form action="work.html" method="get" target="_blank">
         <button type="submit">Work Manager Page</button>
-        </form>
+    </form>
 
-        <form action="missionpage.html" method="get" target="_blank">
-            <button type="submit">Mission Page</button>
-        </form>
+    <form action="missionpage.html" method="get" target="_blank">
+        <button type="submit">Mission Page</button>
+    </form>
 
-
-
-        <h1>Goblin Database UI</h1>
-
-        <div id="goblinformdiv">
-            <label>Goblin Name</label>
-            <input type="text" id="goblinname" />
-            <button type="button" onclick="createGoblin()">Add Goblin</button>
-        </div>
-
-        <div id="updateformdiv">
-            <label>Goblin Name To Update</label>
-            <input type="text" id="goblinNameToUpdate" />
-            <label>Goblin WorkID To Update</label>
-            <input type="text" id="goblinWIDToUpdate" />
-            <label>Goblin Level To Update</label>
-            <input type="text" id="goblinLevelToUpdate" />
-            <label>Goblin Money To Update</label>
-            <input type="text" id="goblinMoneyToUpdate" />
-            <label>Goblin Height To Update</label>
-            <input type="text" id="goblinHeightToUpdate" />
-            <button type="button" onclick="updateGoblin()">Update Goblin</button>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Work ID</th>
-                    <th>Level</th>
-                    <th>Money</th>
-                    <th>Height</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="resultareaGoblin">
-            </tbody>
-        </table>
+    <form action="noncrud.html" method="get" target="_blank">
+        <button type="submit">Non Crud Page</button>
+    </form>
 
 
 
+    <h1>Goblin Database UI</h1>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
-        <script src="script.js"></script>
+    <div id="goblinformdiv">
+        <label>Goblin Name</label>
+        <input type="text" id="goblinname" />
+        <button type="button" onclick="createGoblin()">Add Goblin</button>
+    </div>
+
+    <div id="updateformdiv">
+        <label>Goblin Name To Update</label>
+        <input type="text" id="goblinNameToUpdate" />
+        <label>Goblin WorkID To Update</label>
+        <input type="text" id="goblinWIDToUpdate" />
+        <label>Goblin Level To Update</label>
+        <input type="text" id="goblinLevelToUpdate" />
+        <label>Goblin Money To Update</label>
+        <input type="text" id="goblinMoneyToUpdate" />
+        <label>Goblin Height To Update</label>
+        <input type="text" id="goblinHeightToUpdate" />
+        <button type="button" onclick="updateGoblin()">Update Goblin</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Work ID</th>
+                <th>Level</th>
+                <th>Money</th>
+                <th>Height</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="resultareaGoblin">
+        </tbody>
+    </table>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
